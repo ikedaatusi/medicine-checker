@@ -50,10 +50,11 @@ MVPリリース
 OpenAI APIによるchatbot機能を使ってユーザーから送られてきた情報をAPIを叩いて情報を取得し、言葉を生成してもらう実装をします。
 
 ■技術スタック
-| カテゴリ              | コンテンツ技術                    |
-| サーバーサイド          | Ruby on Rails ・Ruby           |
-| cssフレームワーク      | Tailwindcss + daisyUI           |
-| web API              |OpenAI API(GPT-3.5)・Google API |
-| データベース           | PostgreSQL                     |
-| アプリケーションサーバー | Fly.io                         |
-| バージョン管理ツール     | GitHub                         |
+| カテゴリ | コンテンツ技術 |
+| --- | --- |
+| サーバーサイド | Ruby on Rails ・Ruby |
+| cssフレームワーク | Tailwindcss + daisyUI |
+| web API | OpenAI API(GPT-3.5)・Google API |
+| データベース | PostgreSQL |
+| アプリケーションサーバー | Fly.io |
+| バージョン管理ツール | GitHub |
