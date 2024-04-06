@@ -19,6 +19,7 @@
 　　⚪︎画像はAIに生成してもらったかっこいいスーパーカーの画像をプレゼントする予定です
 　　プレゼントする画像のイメージ↓
 [Uploading DALL·E 2024-04-06 15.29.19 - A vibrant red supercar speeding down a coastal road during sunset. The car's sleek, aerodynamic design is highlighted by the golden hues of the settin.webp…]()
+![アップロード otsuki_kochi_00028.jpg...]()
 ￼
 ・Google Maps APIを使って通っている病院の住所を登録できる（『登録病院の一覧』でまとめて確認できる）
 ・病院名をタップするとGoogle Mapが表示されて、位置情報を見ることができる
