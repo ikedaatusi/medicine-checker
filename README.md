@@ -32,6 +32,7 @@ Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&n
 
 ### ER図
 ![ER図](https://github.com/ikedaatusi/Smile-Oasis/assets/146809265/c927e55c-d5d8-4f53-abb8-173d9b66f9a9)
+
 　　
 ### READMEに記載した機能
 MVPリリース
