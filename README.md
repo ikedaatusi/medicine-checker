@@ -29,6 +29,9 @@ Xで共有できるようにして宣伝する
 
 ### 画面遷移図
 Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&node-id=0%3A1&mode=design&t=GLFmunPY1SkPYLIq-1
+
+### ER図
+![ER図](https://github.com/ikedaatusi/Smile-Oasis/assets/146809265/c927e55c-d5d8-4f53-abb8-173d9b66f9a9)
 　　
 ### READMEに記載した機能
 MVPリリース
@@ -77,7 +80,5 @@ MVPリリース
 | バージョン管理ツール | GitHub |
 | その他 | Docker |
 
-
-・トップページにカレンダーを表示させて、服用チェックする日を押すと服用チェックをするモーダルがでて、チェックするようにする。服用チェック済みの場合は詳細画面にページ遷移する。服用チェックがない場合は『服用中の薬はありません』とフラッシュメッセージを表示させる
-
-またLINE通知機能を使ってアプリから連携設定をしてもらうと、決まった時間にリマインド通知が届いて忘れずに服用チェックが行える
+ER図
+![](./dir/filename)
