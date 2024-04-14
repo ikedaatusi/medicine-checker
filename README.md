@@ -81,5 +81,3 @@ MVPリリース
 | バージョン管理ツール | GitHub |
 | その他 | Docker |
 
-ER図
-![](./dir/filename)
