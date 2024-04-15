@@ -31,7 +31,7 @@ Xで共有できるようにして宣伝する
 Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&node-id=0%3A1&mode=design&t=GLFmunPY1SkPYLIq-1
 
 ### ER図
-![Image from Gyazo](https://i.gyazo.com/1bab26fdb80c67ec0f8cb56b04a909ce.png)
+![Image from Gyazo](https://i.gyazo.com/9ad2f19c0e1d765c2cd086eab3a65516.jpg)
 
 　　
 ### READMEに記載した機能
