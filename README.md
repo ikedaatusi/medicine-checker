@@ -32,7 +32,7 @@ Xで共有できるようにして宣伝する
 Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&node-id=0%3A1&mode=design&t=GLFmunPY1SkPYLIq-1
 
 ### ER図
-![Image from Gyazo](https://i.gyazo.com/dc3c365b2c2a2319b7da7349a7cb8871.png)
+![Image from Gyazo](https://i.gyazo.com/c84913999463db5de39f1d5bdd0563bc.png)
 
 　　
 ### READMEに記載した機能
@@ -78,7 +78,7 @@ MVPリリース
 | web API | OpenAI API(GPT-４)・Google API（ログイン機能） ・Google Maps API ・LINE Messaging API｜
 |ファイルサーバー | AWS S3 |
 | データベース | PostgreSQL |
-| アプリケーションサーバー | Fly.io |
+| アプリケーションサーバー | Render |
 | バージョン管理ツール | GitHub |
 | その他 | Docker |
 
