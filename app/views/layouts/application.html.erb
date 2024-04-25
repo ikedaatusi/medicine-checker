@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="./application.tailwind.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="flex flex-col min-h-screen">
+ 
+      
+    <%= render 'shared/header' %> 
+    <div class="flex-grow bg-yellow-50">
     <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
