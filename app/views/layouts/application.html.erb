@@ -8,13 +8,20 @@
     <link href="./application.tailwind.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body class="flex flex-col min-h-screen">
  
-      
-    <%= render 'shared/header' %> 
+    
+    <% if logged_in? %>
+      <%= render 'shared/header' %> 
+    <% else %>
+      <%= render 'shared/before_login_header' %>
+    <% end %>
+    
+   
+    
     <div class="flex-grow bg-yellow-50">
     <%= yield %>
     </div>
