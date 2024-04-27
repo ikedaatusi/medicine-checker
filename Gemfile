@@ -32,6 +32,8 @@ gem 'cssbundling-rails'
 gem 'jsbundling-rails'
 
 gem 'sorcery'
+
+gem 'tailwindcss-rails'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
