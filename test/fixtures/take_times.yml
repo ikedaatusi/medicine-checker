@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drug: one
+  take_time: 1
+
+two:
+  drug: two
+  take_time: 1

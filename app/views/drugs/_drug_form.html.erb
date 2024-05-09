@@ -1,0 +1,4 @@
+<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
+  <%= form.label "タイミング" %>
+  <%= form.select :take_time, TakeTime.take_times.keys.map { |k, i| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
+</div>
