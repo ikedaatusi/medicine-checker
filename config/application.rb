@@ -11,6 +11,12 @@ module MedicineChecker
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # タイムゾーンを日本時間に設定
+    config.time_zone = 'Asia/Tokyo'
+
+    # デフォルトのロケールを日本（ja）に設定
+    config.i18n.default_locale = :ja
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

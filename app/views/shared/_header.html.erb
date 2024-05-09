@@ -4,28 +4,28 @@
       <%= image_tag '12345.jpg', class: "ms-3", style: "height: 45px;" %>
     <% end %>
       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "病院登録", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "病院登録", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "病院一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "病院一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "カレンダー", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "カレンダー", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "薬の一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "薬の一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "薬の登録", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "薬の登録", new_drug_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
+       </div>
+       <!--<div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <%= link_to "画像一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "画像一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
-       </div>
+            <%= link_to "ガチャを回す", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+       </div>-->
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "ガチャを回す", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
-       </div>
-       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "マイページ", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
+            <%= link_to "マイページ", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "ログアウト", logout_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
@@ -37,6 +37,7 @@
           <i class="fas fa-bars fa-2x" style="color:white"></i>
         </label>
       </div>
+
       <!--サイドメニュー -->
       <div class="drawer-side z-10">
         <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
@@ -62,11 +63,11 @@
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
-            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+            <%= link_to new_drug_path, class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">薬の登録</p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl mt-4">
+          <!--<li class="hover:rounded-xl mt-4">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">画像一覧</p>
             <% end %>
@@ -75,7 +76,7 @@
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">ガチャを回す</p>
             <% end %>
-          </li>
+          </li>-->
           <li class="hover:rounded-xl mt-4">
             <%= link_to "#", data: { turbo: false }, class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">マイページ</p>
@@ -90,6 +91,5 @@
       </details>
     </nav>
   </div>
-    </div>
 </nav>
 
