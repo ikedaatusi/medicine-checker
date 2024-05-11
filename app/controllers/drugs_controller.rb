@@ -16,8 +16,13 @@ class DrugsController < ApplicationController
   end 
 
   def index
-    @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(%i[user drugs]).order(created_at: :desc).page(params[:page])
+    # @user = User.find(params[:id])
+    # @q = Drug.ransack(params[:q])
+    # @drugs = @q.result(distinct: true).includes(%i[user drugs]).order(created_at: :desc).page(params[:page])
+    @drugs = Drug.includes(:take_times)
+    #          .order("start_times.created_at DESC")
+    # @drugs = Drug.joins(:start_time).select("drugs.*", "start_times.*")         
+    # @drugs = Drug.take_times
   end
 
   def show

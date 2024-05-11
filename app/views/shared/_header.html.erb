@@ -13,7 +13,7 @@
             <%= link_to "カレンダー", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "薬の一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
+            <%= link_to "薬の一覧", "/drugs", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "薬の登録", new_drug_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
@@ -28,8 +28,10 @@
             <%= link_to "マイページ", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "ログアウト", logout_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2", data: { turbo_method: :delete } %>
-       </div>
+       <%= link_to logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" }, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" do %>
+              <p class="text-sm">ログアウト</p>
+            <% end %>
+            </div>
       <div class="drawer-end sm:block  xl:hidden   fixed top-5 right-6 z-10 ">
       <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">

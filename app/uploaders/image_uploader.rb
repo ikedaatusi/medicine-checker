@@ -29,7 +29,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    'sample.png'
+    'demo.png'
   end
 
   def extension_allowlist

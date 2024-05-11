@@ -7,5 +7,5 @@ class Drug < ApplicationRecord
   validates :drug_name, presence: true, length: { maximum: 255 }
   validates :number_of_tablets, presence: true, length: { maximum: 200 }
 
-  
+  enum take_time: { free: 1, standard: 2, premium: 3 }
 end
