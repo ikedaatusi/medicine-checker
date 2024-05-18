@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :drugs
+  resources :drugs 
   resources :users, only: %i[new create]
   get 'tops/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
-  
+  resources :calendars
 
   root "tops#index"
   get 'login', to: 'user_sessions#new' 

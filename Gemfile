@@ -42,11 +42,20 @@ gem 'enum_help'
 gem 'carrierwave'
 gem 'mini_magick'
 
+
 #環境変数
 gem 'dotenv-rails'
 #画像アップロード
 gem 'fog-aws'
-# gem "cocoon"
+#検索機能
+gem 'ransack'
+#ページネーション
+gem 'kaminari'
+#カレンダー
+gem 'simple_calendar', '~> 2.4' 
+#gem 'cocoon'
+
+gem 'rails-i18n'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

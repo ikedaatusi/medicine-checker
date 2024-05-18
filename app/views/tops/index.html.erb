@@ -10,4 +10,4 @@
 <p data-controller='hello'></p>
 
 <%= l(@day)  %>
-
+<%= render partial: 'special_posts', collection: @special_posts, as: :drug %>
