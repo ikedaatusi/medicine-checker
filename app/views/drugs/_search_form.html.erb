@@ -1,6 +1,8 @@
 <%= search_form_for q, url: url do |f| %>
   <div class="input-group mb-3">
     <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control', placeholder: "検索ワード" %>
+    <%= f.select :take_times_take_time_eq, TakeTime.take_times.keys.map.with_index { |k, i| [t("enum.take_time.take_time.#{k}"), i] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
+
     <div class="input-group-append">
       <%= f.submit class: 'btn btn-primary' %>
     </div>

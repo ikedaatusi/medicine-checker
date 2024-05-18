@@ -1,0 +1,10 @@
+ <div>
+<%= month_calendar events: @drugs do |date, drugs| %>
+    <span class="block text-xs font-semibold text-gray-900"><%= date.day %></span>
+    <% drugs.each do |drug| %>
+      <div class="mt-1">
+        <%= link_to drug.drug_name, drug, class: "block text-sm font-medium text-indigo-600 hover:text-indigo-900" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

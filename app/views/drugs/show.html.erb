@@ -1,4 +1,4 @@
-<% content_for(:title, @board.title) %>
+
 <div class="container pt-5">
   <div class="row mb-3">
     <div class="col-lg-8 offset-lg-2">
@@ -13,22 +13,26 @@
               <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
             </div>
             <div class='col-md-9'>
-              <h3 class="d-inline"><%= @board.title %></h3>
+             
               <ul class="list-inline">
                 <li class="list-inline-item">by <%= @drug.hospital_name %></li>
                 <li class="list-inline-item">by <%= @drug.drug_name %></li>
                 <li class="list-inline-item">by <%= @drug.number_of_tablets %></li>
                 <!-- 複数服用タイミングを表示させる　--->
-                <li class="list-inline-item">by <%= @drug.take_times.decorate.take_time %></li>
+                服用タイミング
+                <% @drug.take_times.each do |take_time| %>
+          
+          <li><%= take_time.take_time %></li> 
+          <% end %>
                 <li class="list-inline-item">by <%= @drug.start_time %></li>
-                <li class="list-inline-item"><%= l @grug.end_time %></li>
+                <li class="list-inline-item"><%= l @drug.end_time %></li>
               </ul>
               <div class='d-flex justify-content-end'>
-                <%= link_to "編集をする", edit_drug_path(drug)%>
+                <%= link_to "編集をする", edit_drug_path(@drug)%>
               </div>
             </div>
           </div>
-          <p><%= simple_format(@board.body) %></p>
+          
         </div>
       </article>
     </div>
