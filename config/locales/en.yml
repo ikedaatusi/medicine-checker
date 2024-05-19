@@ -30,9 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  enum:
-    take_time:
-      take_time:
-        free: "朝"
-        standard: "昼"
-        premium: "夜"
+#   enum:
+#     take_time:
+#       take_time:
+#         free: "朝"
+#         standard: "昼"
+#         premium: "夜"

@@ -19,6 +19,11 @@
           <% end %>
           登録日
           <li><%= l drug.created_at, format: :short %></li>
+          <li class="hover:rounded-xl mt-4">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm">チェックする</p>
+            <% end %>
+          </li>
         </ul>
   </div>
   </div>
