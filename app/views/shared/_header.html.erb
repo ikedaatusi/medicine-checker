@@ -3,11 +3,14 @@
         <%= link_to root_path, class: "navbar-brand d-lg-block d-none p-0" do %>
       <%= image_tag '12345.jpg', class: "ms-3", style: "height: 45px;" %>
     <% end %>
-      <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <!--div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "病院登録", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "病院一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+       </div-->
+       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <%= link_to "薬チェック確認", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "カレンダー", "/calendars", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
@@ -44,7 +47,7 @@
       <div class="drawer-side z-10">
         <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="dark:bg-gray-300 dropdown-content z-[1] menu p-4 w-56 min-h-full">
-          <li class="hover:rounded-xl mt-4">
+          <!--li class="hover:rounded-xl mt-4">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">病院登録</p>
             <% end %>
@@ -52,6 +55,11 @@
           <li class="hover:rounded-xl mt-4">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">病院一覧</p>
+            <% end %>
+          </li-->
+          <li class="hover:rounded-xl mt-4">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm">薬のチェック確認</p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">

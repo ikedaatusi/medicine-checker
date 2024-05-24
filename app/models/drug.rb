@@ -1,7 +1,9 @@
 class Drug < ApplicationRecord
   belongs_to :user
   has_many :take_times, dependent: :destroy
-  accepts_nested_attributes_for :take_times, allow_destroy: true, reject_if: :all_blank
+  has_many :medication_checks, dependent: :destroy
+  accepts_nested_attributes_for :take_times,allow_destroy: true, reject_if: :all_blank
+  accepts_nested_attributes_for :medication_checks, allow_destroy: true, reject_if: :all_blank
   mount_uploader :image_url, ImageUploader
   validates :hospital_name, presence: true, length: { maximum: 255 }
   validates :drug_name, presence: true, length: { maximum: 255 }
