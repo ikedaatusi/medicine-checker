@@ -1,7 +1,10 @@
-<div class='text-cente flex justify-center'>
-<div class=" my-3 card w-full bg-base-100 shadow-2xl">
-<div class="form-group">
-  <ul class="list-inline">
+<div id="drug-id-<%= drug.id %>"class="w-full lg:w-1/3 p-2">
+  <div class="h-full flex flex-col">
+    <div class="card bg-base-100 shadow-2xl flex flex-col h-full">
+      <div class="card-body text-center flex flex-col h-full">
+        <div class="flex-shrink-0">
+        <ul class="list-none my-3 flex-grow">
+          <li><%= image_tag drug.image_url_url, class: 'card-img-top w-full', style: 'height: 200px; object-fit: cover;'%> </li>
           病院名
           <li><%= drug.hospital_name %></li>
           薬名
@@ -13,18 +16,21 @@
           期間終了日
           <li><%= drug.end_time %></li>
           <!-- 複数服用タイミングを表示させる　-->
-          <% drug.take_times.each do |take_time| %>
           服用タイミング
+          <% drug.take_times.each do |take_time| %>
+          
           <li><%= take_time.take_time %></li> 
           <% end %>
           登録日
           <li><%= l drug.created_at, format: :short %></li>
           <li class="hover:rounded-xl mt-4">
-            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+            <%= link_to new_medication_check_path(drug_id: drug.id), class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">チェックする</p>
             <% end %>
           </li>
         </ul>
+       </div>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
+</div>

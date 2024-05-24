@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_30_023938) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_20_030752) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_30_023938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_drugs_on_user_id"
+  end
+
+  create_table "medication_checks", force: :cascade do |t|
+    t.bigint "drug_id", null: false
+    t.bigint "take_time_id", null: false
+    t.boolean "check"
+    t.date "check_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drug_id"], name: "index_medication_checks_on_drug_id"
+    t.index ["take_time_id"], name: "index_medication_checks_on_take_time_id"
   end
 
   create_table "take_times", force: :cascade do |t|
@@ -47,5 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_30_023938) do
   end
 
   add_foreign_key "drugs", "users"
+  add_foreign_key "medication_checks", "drugs"
+  add_foreign_key "medication_checks", "take_times"
   add_foreign_key "take_times", "drugs"
 end

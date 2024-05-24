@@ -10,4 +10,12 @@
 <p data-controller='hello'></p>
 
 <%= l(@day)  %>
-<%= render partial: 'special_posts', collection: @special_posts, as: :drug %>
+<div class="container mx-auto px-4">
+  <div class="flex flex-wrap justify-start">
+    <% if @drugs.present? %>
+      <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
+    <% else %>
+      <p>薬登録がありません</p>
+    <% end %>
+  </div>
+</div>

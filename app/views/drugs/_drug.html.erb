@@ -1,39 +1,27 @@
-<% content_for(:title) %>
-<div class="col-sm-12 col-lg-4 mb-3">
-  <div id="drug-id-<%= drug.id %>">
-    <div class="card">
-    <div class='text-cente flex justify-center'>
-<div class=" my-3 card w-full bg-base-100 shadow-2xl">
-    <%= image_tag drug.image_url_url, class: 'card-img-top', size: '300x200' %> 
-      <div class="card-body">
-        <ul class="list-inline">
-          病院名
-          <li><%= drug.hospital_name %></li>
-          薬名
-          <li><%= drug.drug_name %></li>
-          薬の数
-          <li><%= drug.number_of_tablets %></li>
-          期間開始日
-          <li><%= drug.start_time %></li>
-          期間終了日
-          <li><%= drug.end_time %></li>
-          <!-- 複数服用タイミングを表示させる　-->
-           服用タイミング
+<div id="drug-id-<%= drug.id %>" class="w-full lg:w-1/3 p-2">
+  <div class="h-full flex flex-col">
+    <div class="card bg-base-100 shadow-2xl flex flex-col h-full">
+      <div class="card-body text-center flex flex-col h-full">
+        <div class="flex-shrink-0">
+          <%= image_tag drug.image_url_url, class: 'card-img-top w-full', style: 'height: 200px; object-fit: cover;' %>
+        </div>
+        <ul class="list-none my-3 flex-grow">
+          <li><strong>病院名:</strong> <%= drug.hospital_name %></li>
+          <li><strong>薬名:</strong> <%= drug.drug_name %></li>
+          <li><strong>薬の数:</strong> <%= drug.number_of_tablets %></li>
+          <li><strong>期間開始日:</strong> <%= drug.start_time %></li>
+          <li><strong>期間終了日:</strong> <%= drug.end_time %></li>
+          <li><strong>服用タイミング:</strong></li>
           <% drug.take_times.each do |take_time| %>
-         
-          <li><%= take_time.take_time %></li> 
+            <li><%= take_time.take_time %></li>
           <% end %>
-          登録日
-          <li><%= l drug.created_at, format: :short %></li>
+          <li><strong>登録日:</strong> <%= l drug.created_at, format: :short %></li>
         </ul>
-    
-        <h4 class="card-title">
-            <%= link_to "編集", edit_drug_path(drug) %>
-            <%= link_to "削除", drug_path(drug), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"} %>
-        </h4>
+        <div class="card-title flex justify-around mt-3">
+          <%= link_to "編集", edit_drug_path(drug), class: "btn btn-primary" %>
+          <%= link_to "削除", drug_path(drug), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-danger" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
