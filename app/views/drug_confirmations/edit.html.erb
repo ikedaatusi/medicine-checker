@@ -1,9 +1,10 @@
-<div id="drug-id-<%= @drug.id %>" class="col-sm-12 col-lg-6 mb-3">
+<div id="drug-id-<%= @drug_id %>" class="col-sm-12 col-lg-6 mb-3">
   <div class="card">
     <div class="text-center flex justify-center">
       <div class="my-3 card w-3/4 bg-base-100 shadow-2xl">
         <div class="card-body">
           <%= l(@date) %>
+          タイミングを編集して、チェックを外すページ
           <%= form_with url: medication_checks_path, local: true do |form| %>
             <ul class="list-inline">
               病院名
