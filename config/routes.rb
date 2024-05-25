@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'drug_confirmations/index'
+  # get 'drug_confirmations/show'
+  # get 'drug_confirmations/new'
+  # get 'drug_confirmations/edit'
   root 'medication_checks#index'
   resources :drugs 
   resources :medication_checks
@@ -6,9 +10,14 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :tops
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  
+  resources :drug_confirmations, only: [:index, :show, :edit, :update] do
+    member do
+      get ':date', action: :show, as: 'with_date_show'
+      get 'edit/:date', action: :edit, as: 'with_date_edit'
+    end
+  end
   # resources :calendars
-  resources :calendars, only: [:index, :show] do
+  resources :calendars, only: [:index, :show, :new] do
     member do
       get ':date', action: :show, as: 'with_date'
     end

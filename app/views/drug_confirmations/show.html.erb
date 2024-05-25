@@ -5,6 +5,7 @@
         <div class=" my-3 card w-100 bg-base-100 shadow-2xl">
          <div class="card-body">
           <%= l(@date) %>
+          タイミングを確認するページ
             <!-- image_tagを使う形に修正してください -->
               <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
             
@@ -17,9 +18,11 @@
                 <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
                 <!-- 複数服用タイミングを表示させる　--->
                 服用タイミング
+                チェックしたかどうか表示させる
                 <% @drug.take_times.each do |take_time| %>
           
                 <li><%= take_time.take_time %></li> 
+               
                 <% end %>
                 服用開始日
                 <li class="list-inline-item"><%= @drug.start_time %></li>
@@ -30,7 +33,7 @@
                 <%= link_to "編集をする", edit_drug_path(@drug)%>
               </div>
               <div class='d-flex justify-content-end'>
-                <%= link_to "チェックする", new_calendar_path(drug_id: @drug.id, date: @date.to_s)%>
+                <%= link_to "チェックする", with_date_edit_drug_confirmation_path(drug_id: @drug.id, date: @date.to_s)%>
               </div>
             </div>
           </div> 

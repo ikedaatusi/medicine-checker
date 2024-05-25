@@ -1,27 +1,20 @@
-class CalendarsController < ApplicationController
+class DrugConfirmationsController < ApplicationController
+  def index
+    @q = Drug.joins(:medication_checks).where(medication_checks: { check: true }).ransack(params[:q])
+    @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
+  end
+  
+  def show
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @drug = Drug.find(params[:id])
+  end
+  
 
-    def new
-        # @day = params[:date] ? Date.parse(params[:date]) : Date.today
-        date_param = params[:date]
-    
-        if date_param.present?
-          begin
-            @date = Date.parse(date_param)
-          rescue ArgumentError
-            # Handle the invalid date case
-            @date = Date.today
-            flash[:alert] = "Invalid date provided, using today's date instead."
-          end
-        else
-          # Handle the case where no date is provided
-          @date = Date.today
-        end
-        @drug = Drug.find(params[:drug_id])
-        @medication_check = MedicationCheck.new
-      end
+  def new
+  end
 
-      def create
-        Rails.logger.debug("Medication Check Params: #{params[:medication_check]}")
+  def update
+    Rails.logger.debug("Medication Check Params: #{params[:medication_check]}")
         notice_message = nil
         alert_message = nil
         
@@ -48,33 +41,36 @@ class CalendarsController < ApplicationController
           alert_message = '投薬チェックの作成に失敗しました。'
         end
       end
-    end
-    if alert_message.present?
-      render :new, alert: alert_message
-    else
-      redirect_to root_path, notice: notice_message
-    end
-      end
+  end
 
-
-
-    def index
-        @q = Drug.ransack(params[:q])
-        @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
-    end
-
-    def show
+  def edit
+    date_param = params[:date]
+    
+        if date_param.present?
+          begin
+            @date = Date.parse(date_param)
+          rescue ArgumentError
+            # Handle the invalid date case
+            @date = Date.today
+            flash[:alert] = "Invalid date provided, using today's date instead."
+          end
+        else
+          # Handle the case where no date is provided
+          @date = Date.today
+        end
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        @drug = Drug.find(params[:id])
-    end
+        @drug = Drug.find(params[:drug_id])
+        @medication_check = MedicationCheck.new
+  end
 
-    private
+  
+
+  private
 
     def calendar_check_params
         #   params.permit(medication_checks_attributes: [:check, :check_time, :take_time_id, :drug_id])
         # end
           params.require(:medication_check).permit(medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id])
     end
-
-
+end
 end
