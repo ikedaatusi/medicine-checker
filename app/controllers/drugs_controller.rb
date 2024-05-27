@@ -1,6 +1,6 @@
 class DrugsController < ApplicationController
   before_action :set_drug, only: [:edit, :update, :show, :destroy]
-
+  before_action :require_login
   def new
     @day = Date.today
     @next_day = @day + 1
@@ -41,7 +41,7 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
+    @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page]).per(21)
   end
 
   def show

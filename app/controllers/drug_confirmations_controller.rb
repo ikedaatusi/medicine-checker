@@ -7,6 +7,7 @@ class DrugConfirmationsController < ApplicationController
   def show
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @drug = Drug.find(params[:id])
+    @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
   end
   
 
@@ -44,23 +45,9 @@ class DrugConfirmationsController < ApplicationController
   end
 
   def edit
-    date_param = params[:date]
-    
-        if date_param.present?
-          begin
-            @date = Date.parse(date_param)
-          rescue ArgumentError
-            # Handle the invalid date case
-            @date = Date.today
-            flash[:alert] = "Invalid date provided, using today's date instead."
-          end
-        else
-          # Handle the case where no date is provided
-          @date = Date.today
-        end
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
-        @drug = Drug.find(params[:drug_id])
-        @medication_check = MedicationCheck.new
+    @drug = Drug.find(params[:drug_id])
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
   end
 
   
@@ -68,9 +55,7 @@ class DrugConfirmationsController < ApplicationController
   private
 
     def calendar_check_params
-        #   params.permit(medication_checks_attributes: [:check, :check_time, :take_time_id, :drug_id])
-        # end
           params.require(:medication_check).permit(medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id])
     end
-end
+  end
 end

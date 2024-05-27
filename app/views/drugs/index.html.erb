@@ -16,4 +16,5 @@
       <p>薬登録がありません</p>
     <% end %>
   </div>
+  <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
 </div>

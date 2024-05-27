@@ -9,12 +9,16 @@
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "病院一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div-->
+      <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <%= link_to "今日のチェックをする", medication_checks_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+       </div>
+       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <%= link_to "カレンダーからチェックする", "/calendars", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+       </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "薬チェック確認", "/drug_confirmations", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
-       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "カレンダー", "/calendars", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
-       </div>
+       
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "薬の一覧", "/drugs", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
        </div>
@@ -58,15 +62,21 @@
             <% end %>
           </li-->
           <li class="hover:rounded-xl mt-4">
-            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">薬のチェック確認</p>
+            <%= link_to medication_checks_path, class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm">今日のチェックをする</p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
             <%= link_to "/calendars", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">カレンダー</p>
+              <p class="text-sm">カレンダーからチェックする</p>
             <% end %>
           </li>
+          <li class="hover:rounded-xl mt-4">
+            <%= link_to "/drug_confirmations", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm">薬のチェック確認</p>
+            <% end %>
+          </li>
+          
           <li class="hover:rounded-xl mt-4">
             <%= link_to "/drugs", class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm">薬の一覧</p>
