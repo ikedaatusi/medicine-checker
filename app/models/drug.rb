@@ -5,8 +5,8 @@ class Drug < ApplicationRecord
   accepts_nested_attributes_for :take_times,allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :medication_checks, allow_destroy: true, reject_if: :all_blank
   mount_uploader :image_url, ImageUploader
-  validates :hospital_name, presence: true, length: { maximum: 255 }
-  validates :drug_name, presence: true, length: { maximum: 255 }
+  validates :hospital_name, presence: true, length: { maximum: 10 }
+  validates :drug_name, presence: true, length: { maximum: 10 }
   validates :number_of_tablets, presence: true, length: { maximum: 200 }
 
   enum take_time: { free: 0, standard: 1, premium: 2 }

@@ -1,4 +1,5 @@
 class MedicationChecksController < ApplicationController
+  before_action :require_login
   def new
     @day = Date.today
     @drug = Drug.find(params[:drug_id])
@@ -9,7 +10,7 @@ class MedicationChecksController < ApplicationController
     Rails.logger.debug("Medication Check Params: #{params[:medication_check]}")
     notice_message = nil
     alert_message = nil
-    
+
     params[:medication_checks_attributes].each do |key, mc_params|
   @drug = Drug.find(mc_params[:drug_id])
   

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # get 'drug_confirmations/show'
   # get 'drug_confirmations/new'
   # get 'drug_confirmations/edit'
-  root 'medication_checks#index'
+  root 'static_pages#top'
+  # root 'medication_checks#index'
   resources :drugs 
   resources :medication_checks
   

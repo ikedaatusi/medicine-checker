@@ -17,13 +17,20 @@
                 薬の数
                 <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
                 <!-- 複数服用タイミングを表示させる　--->
-                服用タイミング
-                チェックしたかどうか表示させる
-                <% @drug.take_times.each do |take_time| %>
-          
-                <li><%= take_time.take_time %></li> 
-               
+                <ul class="list-inline">
+            服用タイミング:
+            <% @drug.take_times.each do |take_time| %>
+              <li><%= take_time.take_time %>:
+                <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
+                <% if check == true %>
+                  服用済み
+                <% else %>
+                  記録なし
                 <% end %>
+              </li>
+            <% end %>
+          </ul>
+                
                 服用開始日
                 <li class="list-inline-item"><%= @drug.start_time %></li>
                 期間終了日
@@ -31,9 +38,6 @@
               </ul>
               <div class='d-flex justify-content-end'>
                 <%= link_to "編集をする", edit_drug_path(@drug)%>
-              </div>
-              <div class='d-flex justify-content-end'>
-                <%= link_to "チェックする", with_date_edit_drug_confirmation_path(drug_id: @drug.id, date: @date.to_s)%>
               </div>
             </div>
           </div> 

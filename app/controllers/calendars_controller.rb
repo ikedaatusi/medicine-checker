@@ -1,5 +1,5 @@
 class CalendarsController < ApplicationController
-
+    before_action :require_login
     def new
         # @day = params[:date] ? Date.parse(params[:date]) : Date.today
         date_param = params[:date]

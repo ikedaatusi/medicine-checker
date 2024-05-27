@@ -30,7 +30,7 @@
                 <%= link_to "編集をする", edit_drug_path(@drug)%>
               </div>
               <div class='d-flex justify-content-end'>
-                <%= link_to "チェックする", new_calendar_path(drug_id: @drug.id, date: @date.to_s)%>
+                <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s)%>
               </div>
             </div>
           </div> 
