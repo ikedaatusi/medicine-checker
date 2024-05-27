@@ -2,3 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "simple_calendar";
+
+.swiper-slide img {
+    width: 50%;
+  }
