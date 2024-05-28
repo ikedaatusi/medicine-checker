@@ -38,7 +38,7 @@ end
 if alert_message.present?
   render :new, alert: alert_message
 else
-  redirect_to root_path, notice: notice_message
+  redirect_to medication_checks_path, notice: notice_message
 end
   end
 
