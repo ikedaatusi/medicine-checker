@@ -1,6 +1,6 @@
 class DrugConfirmationsController < ApplicationController
   def index
-    @q = Drug.joins(:medication_checks).where(medication_checks: { check: true }).ransack(params[:q])
+    @q = current_user.drugs.joins(:medication_checks).where(medication_checks: { check: true }).ransack(params[:q])
     @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
   end
   
@@ -45,7 +45,7 @@ class DrugConfirmationsController < ApplicationController
   end
 
   def edit
-    @drug = Drug.find(params[:drug_id])
+    @drug = current_user.Drug.find(params[:drug_id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
   end

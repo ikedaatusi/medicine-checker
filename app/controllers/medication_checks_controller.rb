@@ -12,7 +12,7 @@ class MedicationChecksController < ApplicationController
     alert_message = nil
 
     params[:medication_checks_attributes].each do |key, mc_params|
-  @drug = Drug.find(mc_params[:drug_id])
+  @drug = current_user.drugs.find(mc_params[:drug_id])
   
   @take_time = TakeTime.find(mc_params[:take_time_id])
   check_time = mc_params[:check_time]
@@ -45,14 +45,14 @@ end
 
     def show
       @day = Date.today
-      @drug = Drug.find(params[:id])
+      @drug = current_user.find(params[:id])
     end
 
     def index
       # @drug = Drug.find(params[:id])
       @day = Date.today
-      special_post_ids = Drug.where.not(start_time: nil).pluck(:id)
-      @drugs = Drug.includes(:take_times).where(id: special_post_ids).where('start_time <= ?', Date.today).where('end_time >= ?', Date.today)
+      special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)
+      @drugs = current_user.drugs.includes(:take_times).where(id: special_drug_ids).where('start_time <= ?', Date.today).where('end_time >= ?', Date.today)
     end
   
 
