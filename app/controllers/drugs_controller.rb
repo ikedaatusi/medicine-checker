@@ -41,7 +41,7 @@ class DrugsController < ApplicationController
 
   def index
     @q = Drug.ransack(params[:q])
-    @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page]).per(21)
+    @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show
