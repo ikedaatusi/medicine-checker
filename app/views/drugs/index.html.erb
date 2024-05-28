@@ -2,15 +2,16 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <!-- 検索フォーム -->
-      <div class='text-cente flex justify-center'>
+      <div class='text-cente flex justify-center mt-10'>
      <%= render 'drugs/search_form', q: @q, url: drugs_path %>
     </div>
   </div>
 </div>
-<div class='text-cente  flex justify-center'>
-     <div class="items-center w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
-       <%= link_to "薬を登録する", new_drug_path %>
-    </div>
+
+    <div class="flex justify-center mt-5">
+       <%= link_to new_drug_path, class:"w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" do %>
+       <p class="text-sm">薬を登録する</p>
+       <% end %>
     </div>
   <!-- 掲示板一覧 -->
  <div class="container mx-auto px-4">
