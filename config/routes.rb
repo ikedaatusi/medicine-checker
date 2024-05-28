@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     end
   end
   # resources :calendars
+  resources :calendar_drugs, only: [:index, :show, :new] do
+    member do
+      get ':date', action: :new, as: 'with_date'
+    end
+  end
   resources :calendars, only: [:index, :show, :new] do
     member do
       get ':date', action: :show, as: 'with_date'

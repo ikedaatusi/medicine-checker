@@ -10,10 +10,10 @@
             <%= link_to "病院一覧", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div-->
       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "今日のチェックをする", medication_checks_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+            <%= link_to "今日のチェック", medication_checks_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-            <%= link_to "カレンダーからチェックする", "/calendars", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
+            <%= link_to "カレンダーからチェック", "/calendars", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "薬チェック確認", "/drug_confirmations", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
@@ -63,12 +63,12 @@
           </li-->
           <li class="hover:rounded-xl mt-4">
             <%= link_to medication_checks_path, class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">今日のチェックをする</p>
+              <p class="text-sm">今日のチェック</p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
             <%= link_to "/calendars", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">カレンダーからチェックする</p>
+              <p class="text-sm">カレンダーからチェック</p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
