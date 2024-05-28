@@ -3,13 +3,17 @@
     <div class="イメージコンテナ">
       <%= image_tag 'mdc.png', サイズ: '500x200' %>
     </div>
-    <div class="hero min-h-fit bg-base-200 flex items-center">
+    <div class="hero min-h-fit flex items-center">
       <div class="hero-content text-center flex flex-col justify-center h-full">
         <div class="max-w-xl">
-          <h1 class="text-4xl font-bold">薬を登録して<br>毎日の薬の管理をしよう<br><br>通知を受け取り、飲み忘れ防止をしましょう</h1>
-          <div class="text-center">
-        <%=  submit_tag "スタート", class: "w-[200px] mt-10 mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
+          <h1 class="text-4xl font-bold">
+            薬を登録して<br>毎日の薬の管理をしよう<br><br>通知を受け取り、飲み忘れ防止をしましょう
+          </h1>
+          <div class="flex justify-center mt-10 mb-10">
+    <div class="w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
+        <%= link_to "スタート", login_path %>
     </div>
+</div>
         </div>
       </div>
     </div>
@@ -19,62 +23,25 @@
 <div class="lg:flex justify-center items-center gap-4 space-y-4">
   <div class="card w-96 bg-base-100 shadow-xl mx-auto flex flex-col justify-center h-full">
     <div class="card-body">
-      <h2 class="card-title">1。登録する</h2>
+      <h2 class="card-title">1. 登録する</h2>
       <p>病院でもらった薬、服用タイミングなどを登録しましょう。</p>
     </div>
   </div>
   <div class="card w-96 bg-base-100 shadow-xl mx-auto flex flex-col justify-center h-full">
     <div class="card-body">
-      <h2 class="card-title">2。LINE通知を受け取りましょう</h2>
+      <h2 class="card-title">2. LINE通知を受け取りましょう</h2>
       <p>LINE連携するとラインから服用チェック通知が届くようになります。<br></p>
     </div>
   </div>
   <div class="card w-96 bg-base-100 shadow-xl mx-auto flex flex-col justify-center h-full">
     <div class="card-body">
-      <h2 class="card-title">3。チェックをつけましょう</h2>
+      <h2 class="card-title">3. チェックをつけましょう</h2>
       <p>服用したらチェックをつけましょう。<br>カレンダーから状況が見れます。</p>
     </div>
   </div>
 </div>
 
-<div class="bg-base-200 pb-4">
-  <div class="text-4xl font-bold max-w-3xl mx-auto md:h-3/4 lg:h-2/3 pt-4 text-center">詳しい説明</div>
-  <div class="container mx-auto">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><%= image_tag asset_path('mdc.png'), alt: '' %></div>
-        <div class="swiper-slide"><%= image_tag asset_path('medicine-checker.webp'), alt: '' %></div>
-        <div class="swiper-slide"><%= image_tag asset_path('12345.jpg'), alt: '' %></div>
-      </div>
-      <!-- ページネーション -->
-      <div class="swiper-pagination"></div>
-      <!-- 前後の矢印 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        ループ: true, // ループ
-        speed: 1500, // 少しゆっくり(デフォルトは300)
-        autoplay: {
-          // 自動再生
-          delay: 1000, // 1秒後次のスライド
-          disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-        },
-        // ページネーション
-        ページネーション: {
-          el: ".swiper-pagination",
-          クリック可能: true,
-        },
-        // 前後の矢印
-        ナビゲーション: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
-  </div>
-</div>
+
 
 
 
