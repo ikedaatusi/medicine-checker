@@ -40,13 +40,13 @@ class DrugsController < ApplicationController
   end 
 
   def index
-    @q = Drug.ransack(params[:q])
+    @q = current_user.drugs.ransack(params[:q])
     @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def show
     @day = Date.today
-    @drug = Drug.find(params[:id])
+    @drug = current_user..find(params[:id])
   end
 
   def update
@@ -75,7 +75,7 @@ class DrugsController < ApplicationController
   private
 
   def set_drug
-    @drug = Drug.find(params[:id])
+    @drug = current_user.drugs.find(params[:id])
   end
 
   def drug_params
@@ -85,6 +85,7 @@ class DrugsController < ApplicationController
   # def drug_param
   #   params.require(:drug).permit(:drug_id, take_times_attributes: [:id, :take_time, :_destroy], medication_checks_attributes: [:id, :check, :check_time, :_destroy])
   # end
+  
 
   def set_check_time
     today = Date.today + 4
