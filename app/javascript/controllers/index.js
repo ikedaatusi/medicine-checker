@@ -3,12 +3,11 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import RailsNestedForm from '@stimulus-components/rails-nested-form'
+
 // import NestedFormController from '@stimulus-components/rails-nested-form';
 // application.register('nested-form', NestedFormController);
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import TakeTimeController from "./take_time_controller"
-
-application.register("take-time", TakeTimeController)
