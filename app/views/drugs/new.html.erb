@@ -48,31 +48,12 @@
 
         <%= form.fields_for :take_times do |qu| %>
         
-          <%= qu.label '(必須)タイミング ※必ず一つ選択してください' %>
+          <%= qu.label '(必須)タイミング' %>
           <div class="form-group">
           <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}, required: true } %>
         <% end %>
        </div>
-        <div class="form-group">
-        <%= form.fields_for :take_times do |qu| %>
-          <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
-        <% end %>
-        </div>
-        <div class="form-group">
-        <%= form.fields_for :take_times do |qu| %>
-          <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
-        <% end %>
-        </div>
-        <div class="form-group">
-        <%= form.fields_for :take_times do |qu| %>
-          <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
-        <% end %>
-        </div>
-        <div class="form-group">
-        <%= form.fields_for :take_times do |qu| %>
-          <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
-        <% end %>
-        </div>
+        
         <div class="text-center">
          <%= form.submit "登録", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
        </div>
