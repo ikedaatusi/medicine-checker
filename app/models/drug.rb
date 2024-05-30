@@ -9,7 +9,7 @@ class Drug < ApplicationRecord
   validates :drug_name, presence: true, length: { maximum: 10 }
   validates :number_of_tablets, presence: true, length: { maximum: 200 }
 
-  enum take_time: { free: 0, standard: 1, premium: 2 }
+  
 
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "drug_name", "end_time", "hospital_name", "id", "image_url", "number_of_tablets", "start_time", "updated_at", "user_id"]

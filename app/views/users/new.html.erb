@@ -4,32 +4,37 @@
     新規登録</p>
   </div>
 </div>
-    <div class='text-cente flex justify-center'>
-      <%= form_with(model:@user,local: true,) do |form| %>
-        <div class="form-group">
-          <%= form.label :name %>
-          <%= form.text_field :name,class: "w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "名前" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :email %>
-          <%= form.text_field :email,class: "w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "name@flowbite.com" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :password %>
-          <%= form.password_field :password,class: "w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "•••••••••" %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :password_confirmation %>
-          <%= form.password_field :password_confirmation,class: "w-[300px] mb-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "•••••••••" %>
-        </div>
-        <div class="text-center">
-         <%= form.submit "登録", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
+   <div class="flex justify-center items-center ">
+  <div class="w-full max-w-md">
+    <%= form_with(model:@user, local: true) do |form| %>
+      <div>
+        <%= render 'shared/error_messages', object: form.object %>
       </div>
-      <% end %>
+      <div class="form-group">
+        <%= form.label :name%>
+        <%= form.text_field :name, class: "w-full mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "名前" %>
       </div>
+
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "w-full mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "name@flowbite.com" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "w-full mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "•••••••••" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "w-full mb-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "•••••••••" %>
+      </div>
+      <div class="text-center">
+        <%= form.submit "登録", class: "w-[200px]  focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:focus:ring-yellow-900" %>
+      </div>
+    <% end %>
+  </div>
+</div>
       <div class="text-center my-8">
     <%= link_to "ログインページへ", login_path %>
     </div>
