@@ -16,8 +16,9 @@
             <div class="text-center flex justify-center">
               <div class="my-3 card w-85 bg-base-100 shadow-2xl">
                 <div class="card-body">
+                <h3>※服用したらチェックを入れて保存しましょう</h3>
                   <h3>服用するタイミング</h3>
-                  ※服用したらチェックを入れて保存しましょう
+                  
                   <% @drug.take_times.each do |take_time| %>
                     <%= form.fields_for "medication_checks_attributes[]", take_time do |mc_form| %>
                       <li id="TakeTime-id-<%= take_time.id %>">
