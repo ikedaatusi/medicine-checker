@@ -1,4 +1,6 @@
-<div class="nested-form-wrapper" data-new-record="<%= form.object.new_record? %>">
-  <%= form.label "タイミング" %>
-  <%= form.select :take_time, TakeTime.take_times.keys.map { |k, i| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}} %>
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <%= f.label "タイミング" %>
+  <%= f.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]" } %>
+  <button type="button" data-action="nested-form#remove">todoを削除する</button>
+  <%= f.hidden_field :_destroy %>
 </div>
