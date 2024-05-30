@@ -20,18 +20,18 @@ class MedicationChecksController < ApplicationController
   existing_check = MedicationCheck.find_by(drug: @drug, take_time: @take_time, check_time: check_time)
   if existing_check
     if existing_check.update(mc_params.permit(:check, :check_time, :take_time_id, :drug_id))
-      notice_message = 'メディケーションチェックが正常に更新されました。'
+      notice_message = '保存しました'
     else
-      alert_message = '投薬チェックの更新に失敗しました。'
+      alert_message = '保存に失敗しました。'
     end
   else
     @medication_check = MedicationCheck.new(mc_params.permit(:check, :check_time, :take_time_id, :drug_id))
     @medication_check.drug = @drug
     @medication_check.take_time = @take_time
     if @medication_check.save
-      notice_message = 'メディケーションチェックが正常に作成されました。'
+      notice_message = '保存しました'
     else
-      alert_message = '投薬チェックの作成に失敗しました。'
+      alert_message = '保存に失敗しました。'
     end
   end
 end
