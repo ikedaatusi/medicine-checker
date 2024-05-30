@@ -1,0 +1,52 @@
+ja:
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d %H:%M"
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+      
+  time:
+    formats:
+      short: "%Y/%m/%d"
+  # activerecord:
+  #   errors:
+  #     messages:
+  #       record_invalid: 'バリデーションに失敗しました: %{errors}'
+  #       restrict_dependent_destroy:
+  #         has_one: "%{record}が存在しているので削除できません"
+  #         has_many: "%{record}が存在しているので削除できません"
+  activerecord:
+    models:
+      user: 'ユーザー'
+      article: '投稿'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'ユーザー'
+      drug:
+        hospital_name: '病院名'
+        drug_name: "薬名"
+        number_of_tablets: "錠数"
+        image_url: "画像"
+        start_time: "服用開始日"
+        end_time: "服用終了日"
+  user_session:
+    new:
+      email: 'メールアドレス'
+      assword: 'パスワード'
+        
+      
+       
+      
+  
+    

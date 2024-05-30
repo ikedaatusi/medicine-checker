@@ -10,31 +10,30 @@ class DrugsController < ApplicationController
   end
 
   def create
-     @drugs = current_user.drugs.build(drug_params)
-     
-     sabun = (@drugs.start_time - Date.today).to_i
-     unless sabun >= 0
-      flash[:error] = "開始日は明日以降で！"
-       render :new
-       return
-     end
-     sabun = (@drugs.end_time - @drugs.start_time).to_i
-      unless sabun <= 180
-      flash[:error] = "期間は最長180日間まで!"
-      render :new
-      return
-      end
-      unless sabun >= 0
-      flash[:error] = "終了日は開始日以降で！"
-      render :new
-      return
-      end
-    
-      
-    if @drugs.save
-      redirect_to root_path
+    @drug = current_user.drugs.build(drug_params)
+    sabun_start = (@drug.start_time - Date.today).to_i
+    sabun_duration = (@drug.end_time - @drug.start_time).to_i
+  
+    if sabun_start < 0
+      flash.now[:error] = "開始日は明日以降で！"
+      render :new and return
+    end
+  
+    if sabun_duration > 180
+      flash.now[:error] = "期間は最長180日間まで!"
+      render :new and return
+    end
+  
+    if sabun_duration < 0
+      flash.now[:error] = "終了日は開始日以降で!"
+      render :new and return
+    end
+  
+    if @drug.save
+      redirect_to drugs_path, status: :see_other, notice: "薬を登録しました"
     else
-      render :new
+      flash.now[:error] = "登録できませんでした"
+      render :new, status: :unprocessable_entity
     end
     
   end 
@@ -53,9 +52,9 @@ class DrugsController < ApplicationController
     
     if @drug.update(drug_params)
       # set_check_time
-      redirect_to root_path
+      redirect_to "/drugs", status: :see_other, notice: "薬を編集しました"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -65,9 +64,9 @@ class DrugsController < ApplicationController
 
   def destroy
     if @drug.destroy
-      redirect_to root_path, status: :see_other, notice: "薬を削除しました"
+      redirect_to drugs_path, status: :see_other, notice: "薬を削除しました"
     else
-      flash.now[:danger] = "削除に失敗しました"
+      flash.now[:alert] = "削除に失敗しました"
       render 'show'
     end
   end
@@ -87,13 +86,13 @@ class DrugsController < ApplicationController
   # end
   
 
-  def set_check_time
-    today = Date.today + 4
-    @drug.take_times.each do |take_time|
-      unless @drug.medication_checks.exists?(check_time: today, take_time_id: take_time.id)
-        @drug.medication_checks.build(check_time: today, take_time_id: take_time.id)
-      end
-    end
-  end
+  # def set_check_time
+  #   today = Date.today + 4
+  #   @drug.take_times.each do |take_time|
+  #     unless @drug.medication_checks.exists?(check_time: today, take_time_id: take_time.id)
+  #       @drug.medication_checks.build(check_time: today, take_time_id: take_time.id)
+  #     end
+  #   end
+  # end
 end
 

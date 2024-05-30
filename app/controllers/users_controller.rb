@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to login_path, success: t('登録しました')
     else
-      flash.now[:danger] = t('登録できませんでした')
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -6,8 +6,8 @@ class UserSessionsController < ApplicationController
       if @user
         redirect_back_or_to medication_checks_path, success: t('ログインしました')
       else
-        flash.now[:danger] = t('登録情報はありません')
-        render :new
+        flash.now[:alert] = "登録情報はありません"
+        render :new, status: :unprocessable_entity
       end
     end
 

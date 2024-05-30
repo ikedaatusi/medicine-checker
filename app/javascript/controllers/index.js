@@ -9,4 +9,6 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import TakeTimeController from "./take_time_controller"
 
+application.register("take-time", TakeTimeController)
