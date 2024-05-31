@@ -10,7 +10,7 @@ class DrugsController < ApplicationController
   end
 
   def create
-     @drug = current_user.drugs.build(drug_params)
+     @drug = current_user.drugs.new(drug_params)
      
     #  sabun = (@drug.start_time - Date.today).to_i
     #  unless sabun >= 0

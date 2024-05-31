@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, success: t('登録しました')
+      redirect_to login_path, status: :see_other, notice: "登録しました"
     else
       render :new, status: :unprocessable_entity
     end
