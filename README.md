@@ -64,7 +64,6 @@ MVPリリース
 
 
 ■ 機能の実装方針予定
-・OpenAI API(GPT-４)（ガチャでプレゼントする画像を生成するのに使う予定
 ・Google API（ログイン機能） 
 ・Google Maps API （病院を登録するのに使う予定）
 ・LINE Messaging API　（ライン通知をするときに使う予定）
@@ -74,7 +73,7 @@ MVPリリース
 | --- | --- |
 | サーバーサイド | Ruby on Rails ・Ruby|
 | cssフレームワーク | Tailwindcss + daisyUI |
-| web API | OpenAI API(GPT-４)・Google API（ログイン機能） ・Google Maps API ・LINE Messaging API｜
+| web API |・Google API（ログイン機能） ・Google Maps API ・LINE Messaging API｜
 |ファイルサーバー | AWS S3 |
 | データベース | PostgreSQL |
 | アプリケーションサーバー | heroku |
