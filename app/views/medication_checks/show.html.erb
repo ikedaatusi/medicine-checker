@@ -1,0 +1,53 @@
+<div id="drug-id-<%= @drug.id %>", class="col-sm-12 col-lg-6 mb-3"><!-- 横幅を3/4に設定 -->
+  <!-- 掲示板内容 -->
+  <div class="card">
+    <div class="text-center flex justify-center">
+      <div class="my-3 card w-3/4 bg-base-100 shadow-2xl"><!-- 横幅を3/4に設定 -->
+        <div class="card-body">
+          <!-- image_tagを使う形に修正してください -->
+          <%= l(@day) %>
+          <ul class="list-inline">
+            病院名
+            <li class="list-inline-item"><%= @drug.hospital_name %></li>
+            薬名
+            <li class="list-inline-item"><%= @drug.drug_name %></li>
+            薬の数
+            <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
+            <!-- 複数服用タイミングを表示させる -->
+           
+            <div class="text-center flex justify-center">
+  <div class="my-3 card w-85 bg-base-100 shadow-2xl">
+    <%= form_with model: @medication_check, url: medication_checks_path, local: true do |form| %>
+    <div class="card-body">
+    今日の服用チェック
+      <h3>服用するタイミング</h3>
+      <% @drug.take_times.each do |take_time| %>
+        <li id="TakeTime-id-<%= take_time.id %>">
+          <%= take_time.take_time %>
+           <%= form.fields_for :medication_checks, @drug.medication_checks.find { |mc| mc.take_time_id == take_time.id } || MedicationCheck.new do |mc_form| %>
+            <%= mc_form.check_box :check, {:checked => false}, checked_value = "true", unchecked_value = "false" %>
+            <%= mc_form.hidden_field :take_time_id, value: take_time.id %>
+            <%= mc_form.hidden_field :drug_id, value: @drug.id %>
+            <%= mc_form.date_field :check_time, value: Date.today %>
+          <% end %>
+        </li>
+      <% end %>
+      <div class="text-center">
+        <%= form.submit "保存する", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
+        <%= link_to 'キャンセルする', drugs_path, class: "w-[200px] mb-10 focus:outline-none text-white bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-gray-900" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+              
+             
+   
+           
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

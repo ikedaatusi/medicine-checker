@@ -16,21 +16,48 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+# gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+
+# フロントエンド
 gem "stimulus-rails"
+gem 'jsbundling-rails'
+
+#css
+gem 'cssbundling-rails'
+gem 'tailwindcss-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'cssbundling-rails'
+# 認証
+gem 'sorcery'
 
-gem 'jsbundling-rails'
+gem 'enum_help'
+#画像編集
+gem 'carrierwave'
+gem 'mini_magick'
 
+
+#環境変数
+gem 'dotenv-rails'
+#画像アップロード
+gem 'fog-aws'
+#検索機能
+gem 'ransack'
+#ページネーション
+gem 'kaminari'
+#カレンダー
+gem 'simple_calendar', '~> 2.4' 
+#gem 'cocoon'
+
+gem 'rails-i18n'
+#デバックツール
+gem 'pry-rails'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

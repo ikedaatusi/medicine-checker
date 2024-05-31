@@ -1,0 +1,63 @@
+<div>
+  <h1 class="font-bold text-4xl">薬を登録する画面</h1>
+</div>
+<div class='text-cente flex justify-center'>
+<div class=" my-3 card w-85 bg-base-100 shadow-2xl">
+      <%= form_with model: @drug, local: true do |form| %>
+      <%= render 'shared/error_messages', object: @drug%>
+      <div class="card-body">
+      
+        <div class="form-group">
+          <%= form.label :hospital_name, '(必須)病院名 ※10文字以内' %>
+          <%= form.text_field :hospital_name,class: " w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", :required => true, placeholder: "例：ひまわりクリニック" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :drug_name, '(必須)薬名 ※10文字以内' %>
+          <%= form.text_field :drug_name,class: "w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", :required => true, placeholder: "例：ミグリトール" %>
+        </div>
+
+        <div class="form-group">
+        
+          <%= form.label :number_of_tablets, '(必須)錠剤 ※200以内まで' %>
+          <%= form.number_field :number_of_tablets,class: "w-[300px] mb-6 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", :required => true, placeholder: "30" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :image_url %>
+          <%= form.file_field :image_url , class: 'form-control mb-3', size: '300x200'%>
+        </div>
+         <% if @drug.present? %>
+  <!-- Display the uploaded image if it exists -->
+        <%= image_tag @drug.image_url.url, size: '300x200' %>
+        <% else %>
+    <!-- Display a placeholder image if no image is uploaded -->
+        <%= image_tag '12345.jpg', alt: 'テスト画像', size: '300x200' %>
+        <% end %>
+        
+
+        <div class="form-group">
+          <%= form.label :start_time, '(必須)服用開始日' %>
+          <%= form.date_field :start_time, class: 'form-control', :required => true, value: @day %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :end_time, '(必須)服用終了日' %>
+          <%= form.date_field :end_time, class: 'form-control', :required => true, value: @next_day %>
+        </div>
+
+        <%= form.fields_for :take_times do |qu| %>
+        
+          <%= qu.label '(必須)タイミング' %>
+          <div class="form-group">
+          <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-[#9A7E7E] form-select min-w-[120px] ml-4 rounded-[3px] border border-[#9A7E7E]", data: {}, required: true } %>
+        <% end %>
+       </div>
+        
+        <div class="text-center">
+         <%= form.submit "登録", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
+       </div>
+      <% end %>
+       </div>
+  </div>
+  </div>

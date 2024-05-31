@@ -1,0 +1,7 @@
+<%= search_form_for q, url: url do |f| %>
+  <div class="flex items-center mb-3 space-x-4">
+    <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control flex-1', placeholder: "検索" %>
+    <%= f.select :take_times_take_time_eq, TakeTime.take_times.keys.map.with_index { |k, i| [t("enum.take_time.take_time.#{k}"), i] }, { include_blank: "未選択" }, { class: "form-select text-gray-700 min-w-[120px] rounded border border-gray-700" } %>
+    <%= f.submit '検索', class: 'btn btn-primary' %>
+  </div>
+<% end %>

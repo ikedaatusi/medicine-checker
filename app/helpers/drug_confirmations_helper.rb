@@ -1,0 +1,2 @@
+module DrugConfirmationsHelper
+end

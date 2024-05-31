@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  hospital_name: MyString
+  drug_name: MyString
+  number_of_tablets: 1
+  image_url: MyString
+  start_time: 2024-04-29
+  end_time: 2024-04-29
+
+two:
+  user: two
+  hospital_name: MyString
+  drug_name: MyString
+  number_of_tablets: 1
+  image_url: MyString
+  start_time: 2024-04-29
+  end_time: 2024-04-29

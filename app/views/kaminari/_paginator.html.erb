@@ -1,0 +1,26 @@
+<% if @drugs.total_pages > 1 %>
+  <nav class="pagination" role="navigation" aria-label="pagination">
+    <ul class="pagination-list flex justify-center space-x-1">
+      <%# Previous Page Link %>
+      <% if @drugs.prev_page %>
+        <li>
+          <%= link_to raw("&laquo;"), url_for(page: @drugs.prev_page), class: "btn btn-sm btn-outline" %>
+        </li>
+      <% end %>
+
+      <%# Pagination Links %>
+      <% (1..@drugs.total_pages).each do |page| %>
+        <li>
+          <%= link_to page, url_for(page: page), class: "btn btn-sm #{'btn-active' if page == @drugs.current_page}" %>
+        </li>
+      <% end %>
+
+      <%# Next Page Link %>
+      <% if @drugs.next_page %>
+        <li>
+          <%= link_to raw("&raquo;"), url_for(page: @drugs.next_page), class: "btn btn-sm btn-outline" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+<% end %>
