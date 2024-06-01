@@ -42,6 +42,8 @@ gem 'enum_help'
 gem 'carrierwave'
 gem 'mini_magick'
 
+#定数を管理
+gem 'config'
 
 #環境変数
 gem 'dotenv-rails'
@@ -87,7 +89,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem 'letter_opener_web', '~> 2.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

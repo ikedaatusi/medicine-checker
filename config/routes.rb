@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :password_resets, only: [:new, :create, :edit, :update]
   # get 'drug_confirmations/index'
   # get 'drug_confirmations/show'
   # get 'drug_confirmations/new'
@@ -36,7 +37,10 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create' 
   delete 'logout', to: 'user_sessions#destroy'
 
-  
+  get '/terms_of_service', to: 'static_pages#terms_of_service'
+  get '/privacy_policy', to: 'static_pages#privacy_policy'
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # Defines the root path route ("/")
   # root "articles#index"
 end
