@@ -9,6 +9,7 @@ class PasswordResetsController < ApplicationController
     redirect_to login_path, status: :see_other, notice: "パスワードリセットのメールに送信しました"
     else
     flash[:success]= 'パスワードリセットのメールの送信に失敗しました'
+    render :new, status: :unprocessable_entity
     end
   end
 
