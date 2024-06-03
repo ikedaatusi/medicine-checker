@@ -64,19 +64,48 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  config.action_mailer.default_url_options = { host: 'https://medicine-checker-e23a28d80a08.herokuapp.com' }
   config.action_mailer.raise_delivery_errors = true
-
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
+  # Gmail の場合
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'https://medicine-checker-e23a28d80a08.herokuapp.com',
-    user_name:            ENV['GMAIL_USERNAME'],
-    password:             ENV['GMAIL_PASSWORD'],
-    authentication:       'plain',
-    enable_starttls_auto: true 
-  }
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => 'smtp.gmail.com',
+  :user_name => ENV['GMAIL_ADDRESS'],
+  :password => ENV['GMAIL_PASSWORD'],
+  :authentication => 'login'
+}
+
+  # config.action_mailer.default_url_options = Settings.default_url_options.to_h
+  # config.action_mailer.raise_delivery_errors = true
+
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'https://medicine-checker-e23a28d80a08.herokuapp.com',
+  #   user_name:            ENV['GMAIL_USERNAME'],
+  #   password:             ENV['GMAIL_PASSWORD'],
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true 
+  # }
+
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'https://medicine-checker-e23a28d80a08.herokuapp.com'
+  # config.action_mailer.default_url_options = { host: host }
+  # ActionMailer::Base.smtp_settings = {
+  #   :port           => ENV['MAILGUN_SMTP_PORT'],
+  #   :address        => ENV['MAILGUN_SMTP_SERVER'],
+  #   :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain         => host,
+  #   :authentication => :plain,
+  # }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
