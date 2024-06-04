@@ -1,0 +1,11 @@
+<%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success float-right' %>
+      <table class="table">
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:email)) %></th>
+          <td><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:name)) %></th>
+          <td><%= current_user.name %></td>
+        </tr>
+      </table>
