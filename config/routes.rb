@@ -29,12 +29,14 @@ Rails.application.routes.draw do
       get ':date', action: :show, as: 'with_date'
     end
   end
-
+  
+  resource :profile,only: %i[show edit update]
   # root "tops#index"
   # get 'tops/:id' => 'tops#new'
   # get 'tops/:id' => 'tops#edit'
   get 'login', to: 'user_sessions#new' 
-  post 'login', to: 'user_sessions#create' 
+  post 'login', to: 'user_sessions#create'
+  post '/guest_login', to: 'user_sessions#guest_login'
   delete 'logout', to: 'user_sessions#destroy'
 
   get '/terms_of_service', to: 'static_pages#terms_of_service'
