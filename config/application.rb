@@ -16,6 +16,8 @@ module MedicineChecker
 
     # デフォルトのロケールを日本（ja）に設定
     config.i18n.default_locale = :ja
+
+    config.autoload_paths += %W(#{config.root}/lib)
     
     # Configuration for the application, engines, and railties goes here.
     #

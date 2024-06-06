@@ -1,8 +1,13 @@
 class ProfilesController < ApplicationController
-    before_action :set_user,only: %i[edit update]
+    before_action :set_user,only: %i[edit update show]
+
+    def show
+        @drug_count = @user.drugs.count # ここでdrugsの数を取得します
+    end
 
     def edit
     end
+      
 
     def update
         if @user.update(user_params)

@@ -45,6 +45,9 @@ gem 'mini_magick'
 #定数を管理
 gem 'config'
 
+#line API用
+gem 'line-bot-api'
+
 #環境変数
 gem 'dotenv-rails'
 #画像アップロード
