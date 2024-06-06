@@ -1,4 +1,3 @@
-require_relative '../trash_day'
 
 namespace :push_line do 
     desc "LINEBOT:ゴミ出しの通知" 
@@ -6,7 +5,7 @@ namespace :push_line do
         trash_day = TrashDay.new
         message = {
             type: 'text',
-            text: trash_day.text
+            text: 'こんにちは'
         }
         client = Line::Bot::Client.new { |config|
             config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
