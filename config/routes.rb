@@ -46,5 +46,5 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # Defines the root path route ("/")
   # root "articles#index"
-  post '/callback' => 'linebot#callback'
+  post '/callback' => 'webhook#callback'
 end
