@@ -26,7 +26,7 @@ class WebhookController < ApplicationController
       case event
       when Line::Bot::Event::Follow # 友達登録イベント
         userId = event['source']['userId']
-        User.find_or_create_by(uid: userId)
+        LineUserId.find_or_create_by(uid: userId)
 
         message = {
           type: 'text',
@@ -37,7 +37,7 @@ class WebhookController < ApplicationController
       when Line::Bot::Event::Unfollow # 友達削除イベント
         userId = event['source']['userId']
         # 必要に応じてユーザーの情報を削除する処理を追加できます
-        # User.find_by(uid: userId)&.destroy
+        LineUserId.find_by(uid: userId)&.destroy
 
       when Line::Bot::Event::Message # メッセージイベント
         case event.type
