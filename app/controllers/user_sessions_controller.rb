@@ -16,13 +16,6 @@ class UserSessionsController < ApplicationController
       redirect_to root_path, status: :see_other, notice: "ログアウトしました"
     end
    
-    def guest_login
-    if current_user
-      redirect_to current_user, alert: "すでにログインしています"  # ログインしている場合はゲストユーザーを作成しない
-    else
-      user = User.guest_login
-      log_in user
-      redirect_to user, notice: "ゲストとしてログインしました"
-    end
+   
   end
 end
