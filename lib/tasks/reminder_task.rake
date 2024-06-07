@@ -4,7 +4,7 @@ namespace :reminder_task do
       webhook = WebhookController.new
       message = {
         type: 'text',
-        text: 'これはリマインダーメッセージです！'
+        text: 'おめでとう！リマインダーメッセージ設定成功だよ！'
       }
       
       # すべてのLINEユーザーにメッセージを送信
