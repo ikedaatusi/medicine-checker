@@ -20,6 +20,7 @@
     <%= form_with model: @medication_check, url: medication_checks_path, local: true do |form| %>
     <div class="card-body">
     今日の服用チェック
+   
       <h3>服用するタイミング</h3>
       <% @drug.take_times.each do |take_time| %>
         <li id="TakeTime-id-<%= take_time.id %>">

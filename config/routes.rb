@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'webhook/kokodayo'
+  resources :already_taken
+  resources :currently_taking
   resources :password_resets, only: [:new, :create, :edit, :update]
   # get 'drug_confirmations/index'
   # get 'drug_confirmations/show'

@@ -1,17 +1,25 @@
-
-      <table class="table">
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:email)) %></th>
-          <td><%= current_user.email %></td>
-        </tr>
-        <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:name)) %></th>
-          <td><%= current_user.name %></td>
-        </tr>
-        <tr>
-    <th scope="row">登録されている薬の数</th>
-    <td><%= @drug_count %></td> <!-- ここでdrugsの数を表示します -->
-  </tr>
-  <a href="https://lin.ee/LI2aSSh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-      </table>
-      <%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success float-right' %>
+<div class="lg:flex justify-center items-center gap-4 space-y-4 mt-10">
+  <div class="flex space-x-8 p-6 bg-white shadow-md rounded-md">
+    
+      <div class="card-body text-center flex flex-col h-full">
+      マイページ
+        <ul class="list-none my-3 flex-grow">
+          <li><strong><%= t(User.human_attribute_name(:email)) %></strong><%= current_user.email %></li>
+          <li><strong><%= t(User.human_attribute_name(:name)) %></strong><%= current_user.name %></li>
+          <li><strong>登録されている薬の数</strong><%= @drug_count %></li>
+        </ul>
+        <div class="card-title flex justify-around mt-3">
+       
+          <%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success float-right' %>
+        </div>
+        <div class="card-title flex justify-around mt-3">
+        リマインダー通知
+        </div>
+        <div class="card-title flex justify-around mt-3">
+         <a href="https://lin.ee/LI2aSSh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" width="150" height="52" alt="友だち追加"></a>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+     
