@@ -1,8 +1,3 @@
-<% content_for(:title, t('.title')) %>
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-
-
 <div class="inline-flex rounded-md shadow-sm">
 <%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
       <p class="text-sm">薬一覧</p>
@@ -17,25 +12,24 @@
 </div>
 
 
+<div class="row">
+    <div class="col-lg-10 offset-lg-1">
       <!-- 検索フォーム -->
-      <div class='text-cente flex justify-center mt-10'>
-     <%= render 'drugs/search_form', q: @q, url: drugs_path %>
+      <div class='text-cente flex justify-center'>
+      <ul class="list-none my-3 flex-grow">
+      <li><h1 class="font-bold text-4xl">服用終了した薬</h1></li>
+     <li><%= l(@day)  %></li>
+      </ul>
     </div>
   </div>
 </div>
-    <div class="flex justify-center mt-5">
-       <%= link_to new_drug_path, class:"w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" do %>
-       <p class="text-sm">薬を登録する</p>
-       <% end %>
-    </div>
-  <!-- 掲示板一覧 -->
- <div class="container mx-auto px-4">
+
+<div class="container mx-auto px-4">
   <div class="flex flex-wrap justify-start">
     <% if @drugs.present? %>
-      <%= render @drugs %>
+      <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
     <% else %>
       <p>薬登録がありません</p>
     <% end %>
   </div>
-  <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
 </div>
