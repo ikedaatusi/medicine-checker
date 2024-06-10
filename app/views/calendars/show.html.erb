@@ -19,7 +19,14 @@
                 服用タイミング
                 <% @drug.take_times.each do |take_time| %>
           
-                <li><%= take_time.take_time %></li> 
+                <li><%= take_time.take_time %>:
+                <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
+                <% if check == true %>
+                  服用済み
+                <% else %>
+                  記録なし
+                <% end %>
+              </li></li> 
                 <% end %>
                 服用開始日
                 <li class="list-inline-item"><%= @drug.start_time %></li>
