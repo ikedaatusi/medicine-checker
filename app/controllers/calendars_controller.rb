@@ -66,6 +66,7 @@ class CalendarsController < ApplicationController
     def show
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
         @drug = Drug.find(params[:id])
+        @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
     end
 
     private

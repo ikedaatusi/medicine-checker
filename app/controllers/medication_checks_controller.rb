@@ -38,7 +38,7 @@ end
 if alert_message.present?
   render :new, alert: alert_message
 else
-  redirect_to medication_checks_path, notice: notice_message
+  redirect_to calendars_path, notice: notice_message
 end
   end
 
@@ -52,9 +52,12 @@ end
       # @drug = Drug.find(params[:id])
       @day = Date.today
       special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)
-      @drugs = current_user.drugs.includes(:take_times).where(id: special_drug_ids)
-              .where('start_time <= ?', Date.today)
-              .where('end_time >= ?', Date.today)
+      @drugs = current_user.drugs
+                .includes(:take_times)
+                .where(id: special_drug_ids)
+                .where('start_time <= ?', Date.today)
+                .where('end_time >= ?', Date.today)
+                
     end
     
 

@@ -9,6 +9,18 @@
     </div>
   </div>
 </div>
+<div class="inline-flex rounded-md shadow-sm">
+<%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+      <p class="text-sm">今日服用予定からチェック</p>
+    <% end %>
+  <%= link_to currently_taking_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+  <p class="text-sm">カレンダーから服用日を選ぶ</p>
+    <% end %>
+  <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+    <p class="text-sm">薬からチェックする</p>
+    <% end %>
+  
+</div>
 
 <div class="container mx-auto px-4">
   <div class="flex flex-wrap justify-start">

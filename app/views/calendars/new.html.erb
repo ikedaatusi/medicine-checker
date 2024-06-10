@@ -19,15 +19,16 @@
                 <h3>※服用したらチェックを入れて保存しましょう</h3>
                   <h3>服用するタイミング</h3>
                   <% @drug.take_times.each do |take_time| %>
+                    <% medication_check = MedicationCheck.find_by(drug_id: @drug.id, take_time_id: take_time.id, check_time: @date) %>
                     <%= form.fields_for "medication_checks_attributes[]", take_time do |mc_form| %>
                       <li id="TakeTime-id-<%= take_time.id %>">
                         <%= take_time.take_time %>
-                        <%= mc_form.check_box :check, {:checked => false}, checked_value = "true", unchecked_value = "false" %>
+                        <%= mc_form.check_box :check, { checked: medication_check&.check }, checked_value = "true", unchecked_value = "false" %>
                         <%= mc_form.hidden_field :take_time_id, value: take_time.id %>
                         <%= mc_form.hidden_field :drug_id, value: @drug.id %>
-                         <!--動的に日付をカレンダーから持ってくる-->
                         <%= mc_form.hidden_field :check_time, value: @date %>
                       </li>
+                      
                     <% end %>
                   <% end %>
                   <div class="text-center">
