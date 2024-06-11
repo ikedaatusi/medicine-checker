@@ -21,7 +21,7 @@
                   
                   <% @drug.take_times.each do |take_time| %>
                     <% medication_check = MedicationCheck.find_by(drug_id: @drug.id, take_time_id: take_time.id, check_time: @day) %>
-                    <%= form.fields_for "medication_checks_attributes[]", medication_check do |mc_form| %>
+                    <%= form.fields_for "medication_checks_attributes[]", take_time  do |mc_form| %>
                       <li id="TakeTime-id-<%= take_time.id %>">
                         <%= take_time.take_time %>
                         <%= mc_form.check_box :check, { checked: medication_check&.check || false }, checked_value = "true", unchecked_value = "false" %>

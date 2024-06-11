@@ -88,13 +88,13 @@ class DrugsController < ApplicationController
   # end
   
 
-  def set_check_time
-    today = Date.today + 4
-    @drug.take_times.each do |take_time|
-      unless @drug.medication_checks.exists?(check_time: today, take_time_id: take_time.id)
-        @drug.medication_checks.build(check_time: today, take_time_id: take_time.id)
-      end
-    end
-  end
+#   def set_check_time
+#     today = Date.today + 4
+#     @drug.take_times.each do |take_time|
+#       unless @drug.medication_checks.exists?(check_time: today, take_time_id: take_time.id)
+#         @drug.medication_checks.build(check_time: today, take_time_id: take_time.id)
+#       end
+#     end
+#   end
 end
 

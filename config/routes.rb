@@ -26,9 +26,12 @@ Rails.application.routes.draw do
       get ':date', action: :new, as: 'with_date'
     end
   end
-  resources :calendars, only: [:index, :show, :new] do
+  resources :calendars, only: [:index, :show, :new, :edit, :update] do
     member do
-      get ':date', action: :show, as: 'with_date'
+      # get ':date', action: :show, as: 'with_date'
+      get ':date', action: :show, as: 'with_date_show'
+      get 'edit/:date', action: :edit, as: 'with_date_edit'
+      patch ':date', action: :update, as: 'with_date_update'
     end
   end
   
