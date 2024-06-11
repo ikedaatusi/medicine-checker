@@ -56,6 +56,23 @@ class CalendarsController < ApplicationController
     end
       end
 
+      def update
+        # @drug = current_user.drugs.find(params[:id])
+        # if @drug.update(drug_params)
+        #   # set_check_time
+        #   redirect_to with_date_show_calendar_path, status: :see_other, notice: "薬を編集しました"
+        # else
+        #   render :new, status: :unprocessable_entity
+        # end
+        @drug = current_user.drugs.find(params[:id])
+        if @drug.update(drug_params)
+          redirect_to with_date_show_calendar_path(@drug, date: params[:date]), notice: '薬を編集しました', status: :see_other
+        else
+          @date = params[:date] ? Date.parse(params[:date]) : Date.today
+          @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
+          render :edit, status: :unprocessable_entity
+        end
+      end
 
 
     def index
@@ -69,6 +86,12 @@ class CalendarsController < ApplicationController
         @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
     end
 
+    def edit
+      @drug = current_user.drugs.find(params[:id])
+      @date = params[:date] ? Date.parse(params[:date]) : Date.today
+      @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
+    end
+
     private
 
     def calendar_check_params
@@ -76,6 +99,8 @@ class CalendarsController < ApplicationController
         # end
           params.require(:medication_check).permit(medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id])
     end
-
-
+    
+    def drug_params
+      params.require(:drug).permit(:hospital_name, :drug_name, :number_of_tablets, :image_url, :start_time, :end_time, take_times_attributes: [:id, :take_time, :_destroy], medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id, :_destroy])
+    end
 end

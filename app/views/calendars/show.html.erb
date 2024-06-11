@@ -34,7 +34,7 @@
                 <li class="list-inline-item"><%= l @drug.end_time %></li>
               </ul>
               <div class='d-flex justify-content-end'>
-                <%= link_to "編集をする", edit_drug_path(@drug)%>
+                <%= link_to "編集をする", with_date_edit_calendar_path(@drug)%>
               </div>
               <div class='d-flex justify-content-end'>
                 <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s)%>
@@ -44,3 +44,5 @@
         </div>
     </div>
   </div>
+
+  

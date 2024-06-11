@@ -19,7 +19,7 @@
     <% drugs.each do |drug| %>
      <% check_status = MedicationCheck.find_by(drug: drug, check_time: date)&.check %>
       <div class="mt-1 <%= check_status ? 'bg-green-200' : 'bg-gray-300' %> ">
-<%= link_to drug.drug_name, with_date_calendar_path(id: drug.id, date: date.to_s), class: "w-full rounded hover:text-indigo-900" %>      </div>
+<%= link_to drug.drug_name, with_date_show_calendar_path(id: drug.id, date: date.to_s), class: "w-full rounded hover:text-indigo-900" %>      </div>
     <% end %>
     
      <% end %>
