@@ -23,13 +23,13 @@
           <% end %>
           登録日
           <li><%= l drug.created_at, format: :short %></li>
-          <li class="hover:rounded-xl mt-4">
-            <%= link_to new_currently_taking_path(drug_id: drug.id), class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">今日の服用チェック</p>
-            <% end %>
-          </li>
+          
           </li>
         </ul>
+        <div class="card-title flex justify-around mt-3">
+          <%= link_to "編集", edit_drug_path(drug), class: "btn btn-primary" %>
+          <%= link_to "削除", drug_path(drug), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-danger" %>
+        </div>
        </div>
       </div>
     </div>
