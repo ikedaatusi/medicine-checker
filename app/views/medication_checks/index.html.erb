@@ -1,29 +1,19 @@
-<div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <div class='text-cente flex justify-center'>
-      <ul class="list-none my-3 flex-grow">
-      <li><h1 class="font-bold text-4xl">今日服用する予定の薬が表示されます、 もし服用タイミングのチェックが全てtrueだったら表示させないようにする</h1></li>
-     <li><%= l(@day)  %></li>
-      </ul>
-    </div>
-  </div>
-</div>
+
+<div class="flex flex-col justify-center items-center mt-10">
+  <div class="container mx-auto px-10">
 <div class="inline-flex rounded-md shadow-sm">
-<%= link_to medication_checks_path, class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+<%= link_to medication_checks_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
       <p class="text-sm">今日服用予定からチェック</p>
     <% end %>
-  <%= link_to "/calendars", class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+  <%= link_to "/calendars", class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
   <p class="text-sm">カレンダーから服用日を選ぶ</p>
-    <% end %>
-  <%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
-    <p class="text-sm">薬からチェックする</p>
-    <% end %>
-  
+    <% end %> 
 </div>
-
+<nav  class="p-4 bg-white border-l border-r rounded-lg w-85">
 <div class="container mx-auto px-4">
+<h1>日付<%= l(@day)  %></h1>
   <div class="flex flex-wrap justify-start">
+  
     <% if @drugs.present? %>
       <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
     <% else %>
@@ -31,3 +21,6 @@
     <% end %>
   </div>
 </div>
+</div>
+</div>
+</nav>
