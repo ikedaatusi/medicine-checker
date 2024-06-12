@@ -25,7 +25,7 @@
                     <%= form.fields_for "medication_checks_attributes[]", take_time  do |mc_form| %>
                       <li id="TakeTime-id-<%= take_time.id %>">
                         <%= take_time.take_time %>
-                        <%= mc_form.check_box :check, { checked: medication_check&.check || false }, checked_value = "true", unchecked_value = "false" %>
+                        <%= mc_form.check_box :check, { class: "checkbox checkbox-success", checked: medication_check&.check || false }, checked_value = "true", unchecked_value = "false" %>
                         <%= mc_form.hidden_field :take_time_id, value: take_time.id %>
                         <%= mc_form.hidden_field :drug_id, value: @drug.id %>
                         <!-- 動的に日付をカレンダーから持ってくる -->
