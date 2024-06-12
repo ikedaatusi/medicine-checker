@@ -16,9 +16,20 @@
 
   <%= month_calendar events: @drugs do |date, drugs| %>
     <span class="block text-xs font-semibold text-gray-900"><%= date.day %></span>
-    <% drugs.each do |drug| %>
-     <% check_status = MedicationCheck.find_by(drug: drug, check_time: date)&.check %>
-      <div class="mt-1 <%= check_status ? 'bg-green-200' : 'bg-gray-300' %> ">
+   <% drugs.each do |drug| %>
+    <% 
+      # Determine the status for the drug on the current date
+      total_checks = MedicationCheck.where(drug: drug, check_time: date).count
+      completed_checks = MedicationCheck.where(drug: drug, check_time: date, check: true).count
+      
+      drug_status = 'gray' # Default to gray
+      if completed_checks == total_checks && total_checks > 0
+        drug_status = 'green'
+      elsif completed_checks > 0
+        drug_status = 'yellow'
+      end
+    %>
+    <div class="mt-1 <%= drug_status == 'green' ? 'bg-green-200' : drug_status == 'yellow' ? 'bg-yellow-200' : 'bg-gray-300' %>">
 <%= link_to drug.drug_name, with_date_show_calendar_path(id: drug.id, date: date.to_s), class: "w-full rounded hover:text-indigo-900" %>      </div>
     <% end %>
     

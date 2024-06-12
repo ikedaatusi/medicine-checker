@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
+  root 'static_pages#top'
   resources :already_taken
   resources :currently_taking
   resources :password_resets, only: [:new, :create, :edit, :update]
-  # get 'drug_confirmations/index'
-  # get 'drug_confirmations/show'
-  # get 'drug_confirmations/new'
-  # get 'drug_confirmations/edit'
-  root 'static_pages#top'
   # root 'medication_checks#index'
   resources :drugs 
   resources :medication_checks
-  
   resources :users, only: %i[new create]
   resources :tops
+  resource :profile,only: %i[show edit update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :drug_confirmations, only: [:index, :show, :edit, :update] do
     member do
@@ -28,17 +24,12 @@ Rails.application.routes.draw do
   end
   resources :calendars, only: [:index, :show, :new, :edit, :update] do
     member do
-      # get ':date', action: :show, as: 'with_date'
       get ':date', action: :show, as: 'with_date_show'
       get 'edit/:date', action: :edit, as: 'with_date_edit'
       patch ':date', action: :update, as: 'with_date_update'
     end
   end
-  
-  resource :profile,only: %i[show edit update]
-  # root "tops#index"
-  # get 'tops/:id' => 'tops#new'
-  # get 'tops/:id' => 'tops#edit'
+
   get 'login', to: 'user_sessions#new' 
   post 'login', to: 'user_sessions#create'
   post '/guest_login', to: 'user_sessions#guest_login'
@@ -49,6 +40,5 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # Defines the root path route ("/")
-  # root "articles#index"
   post '/callback' => 'webhook#callback'
 end
