@@ -1,8 +1,33 @@
+<% content_for(:title, t('.title')) %>
+
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1">
+    
+
+
+
+
+
+      <!-- 検索フォーム -->
+      <div class='text-cente flex justify-center mt-10'>
+     <%= render 'drugs/search_form', q: @q, url: currently_taking_index_path %>
+    </div>
+  </div>
+</div>
+    <div class="flex justify-center mt-5">
+       <%= link_to new_drug_path, class:"w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" do %>
+       <p class="text-sm">薬を登録する</p>
+       <% end %>
+    </div>
+
+     
+  <div class=" flex flex-col justify-center items-center">
+  <div class="container mx-auto px-10">
 <div class="inline-flex rounded-md shadow-sm">
 <%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
       <p class="text-sm">薬一覧</p>
     <% end %>
-  <%= link_to currently_taking_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+  <%= link_to currently_taking_index_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
   <p class="text-sm">服用中の薬</p>
     <% end %>
   <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
@@ -10,18 +35,8 @@
     <% end %>
   
 </div>
-<div class="row">
-    <div class="col-lg-10 offset-lg-1">
-      <!-- 検索フォーム -->
-      <div class='text-cente flex justify-center'>
-      <ul class="list-none my-3 flex-grow">
-      <li><h1 class="font-bold text-4xl">服用中の薬一覧</h1></li>
-     <li><%= l(@day)  %></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
+<nav  class="p-4 bg-white border-l border-r rounded-lg w-85">
+<li><%= l(@day)  %></li>
 <div class="container mx-auto px-4">
   <div class="flex flex-wrap justify-start">
     <% if @drugs.present? %>
@@ -30,5 +45,8 @@
       <p>薬登録がありません</p>
     <% end %>
   </div>
+  <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
 </div>
-
+</div>
+</div>
+</nav>
