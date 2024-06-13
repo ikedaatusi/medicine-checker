@@ -1,8 +1,7 @@
-<%= search_form_for q, url: url do |f| %>
-  <div class="flex items-center mb-3 space-x-4">
-    <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control flex-1', placeholder: "検索" %>
-    <%= f.select :take_times_take_time_eq, TakeTime.take_times.keys.map.with_index { |k, i| [t("enum.take_time.take_time.#{k}"), i] }, { include_blank: "未選択" }, { class: "form-select text-gray-700 min-w-[120px] rounded border border-gray-700" } %>
-    <%= f.submit '検索', class: 'btn btn-primary' %>
+<%= search_form_for q, url: url, html: { class: 'w-full max-w-lg mt-10' } do |f| %>
+  <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 mb-5">
+    <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control flex-1 border-gray-300 rounded-lg px-4 py-2', placeholder: "病院名または薬名で検索" %>
+    <%= f.select :take_times_take_time_eq, TakeTime.take_times.keys.map.with_index { |k, i| [t("enum.take_time.take_time.#{k}"), i] }, { include_blank: "未選択" }, { class: "form-select text-gray-700 min-w-[120px] rounded border border-gray-300 px-4 py-2" } %>
+    <%= f.submit '検索', class: 'btn bg-blue-500 text-white hover:bg-blue-600 rounded-lg px-5 py-2.5 transition-all' %>
   </div>
 <% end %>
-

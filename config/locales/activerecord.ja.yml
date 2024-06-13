@@ -32,7 +32,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        name: 'ユーザー'
+        name: 'ユーザー名'
       drug:
         hospital_name: '病院名'
         drug_name: "薬名"
