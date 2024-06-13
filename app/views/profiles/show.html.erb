@@ -1,25 +1,46 @@
 <div class="lg:flex justify-center items-center gap-4 space-y-4 mt-10">
-  <div class="flex space-x-8 p-6 bg-white shadow-md rounded-md">
-    
-      <div class="card-body text-center flex flex-col h-full">
-      マイページ
-        <ul class="list-none my-3 flex-grow">
-          <li><strong><%= t(User.human_attribute_name(:email)) %></strong><%= current_user.email %></li>
-          <li><strong><%= t(User.human_attribute_name(:name)) %></strong><%= current_user.name %></li>
-          <li><strong>登録されている薬の数</strong><%= @drug_count %></li>
-        </ul>
-        <div class="card-title flex justify-around mt-3">
-       
-          <%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success float-right' %>
+  <div class="flex flex-col md:flex-row space-x-0 md:space-x-8 p-6 bg-white text-gray-800 shadow-md rounded-md">
+    <div class="card-body text-center flex flex-col h-full w-full">
+      <!-- Page Title -->
+      <h2 class="text-2xl font-bold mb-4 text-gray-900">マイページ</h2>
+
+      <!-- User Information -->
+      <ul class="list-none my-3 flex-grow space-y-2">
+        <%# User Email %>
+        <li class="flex items-center justify-center">
+          <i class="fas fa-envelope mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:email)) %></strong>
+          <span class="text-gray-600"><%= current_user.email %></span>
+        </li>
+        
+        <%# User Name %>
+        <li class="flex items-center justify-center">
+          <i class="fas fa-user mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+          <span class="text-gray-600"><%= current_user.name %></span>
+        </li>
+        
+        <%# Number of Registered Medications %>
+        <li class="flex items-center justify-center">
+          <i class="fas fa-pills mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700">登録されている薬の数</strong>
+          <span class="text-gray-600"><%= @drug_count %></span>
+        </li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="card-actions flex flex-col md:flex-row justify-around mt-3 space-y-3 md:space-y-0 md:space-x-4">
+        <%# Edit Profile Button %>
+        <%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success text-white bg-green-500 py-2 px-4 rounded-full shadow-lg hover:bg-green-600' %>
+        
+        <%# Reminder Notification Link %>
+        <div class="flex flex-col items-center">
+          <span class="mb-2 text-gray-700">リマインダー通知</span>
+          <a href="https://lin.ee/LI2aSSh" class="inline-block">
+            <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" width="150" height="52" alt="友だち追加" class="rounded-full shadow-md hover:shadow-lg">
+          </a>
         </div>
-        <div class="card-title flex justify-around mt-3">
-        リマインダー通知
-        </div>
-        <div class="card-title flex justify-around mt-3">
-         <a href="https://lin.ee/LI2aSSh"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" width="150" height="52" alt="友だち追加"></a>
-         </div>
       </div>
     </div>
   </div>
 </div>
-     

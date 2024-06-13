@@ -1,8 +1,10 @@
 <div id="drug-id-<%= drug.id %>"class="w-full lg:w-1/3 p-2">
   <div class="h-full flex flex-col">
     <div class="card bg-base-100 shadow-2xl flex flex-col h-full">
-    <%= image_tag drug.image_url_url, class: 'card-img-top w-full', style: 'height: 200px; object-fit: cover;'%>
-      <div class="card-body text-center flex flex-col h-full">
+    <figure>
+    <%= image_tag drug.image_url_url, class: 'card-img-top w-full', style: 'height: 300px; width: 100%; object-fit: cover;'%>
+    </figure>
+      <div class="card-body text-center flex flex-col">
         <div class="flex-shrink-0">
         <ul class="list-none my-3 flex-grow">
           
