@@ -57,13 +57,6 @@ class CalendarsController < ApplicationController
       end
 
       def update
-        # @drug = current_user.drugs.find(params[:id])
-        # if @drug.update(drug_params)
-        #   # set_check_time
-        #   redirect_to with_date_show_calendar_path, status: :see_other, notice: "薬を編集しました"
-        # else
-        #   render :new, status: :unprocessable_entity
-        # end
         @drug = current_user.drugs.find(params[:id])
         if @drug.update(drug_params)
           redirect_to with_date_show_calendar_path(@drug, date: params[:date]), notice: '薬を編集しました', status: :see_other

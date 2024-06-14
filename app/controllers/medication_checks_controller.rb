@@ -38,7 +38,7 @@ end
 if alert_message.present?
   render :new, alert: alert_message
 else
-  redirect_to calendars_path, notice: notice_message
+  redirect_to with_date_show_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), notice: notice_message
 end
   end
 

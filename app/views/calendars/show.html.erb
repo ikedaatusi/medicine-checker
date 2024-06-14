@@ -1,48 +1,50 @@
-<div class="col-sm-12 col-lg-4 mb-3">
-  <!-- 掲示板内容 -->
-  <div class="card">
-    <div class='text-cente flex justify-center'>
-        <div class=" my-3 card w-100 bg-base-100 shadow-2xl">
-         <div class="card-body">
-          <%= l(@date) %>
-            <!-- image_tagを使う形に修正してください -->
-              <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
-            
-            <ul class="list-inline">
-                病院名
-                <li class="list-inline-item"><%= @drug.hospital_name %></li>
-                薬名
-                <li class="list-inline-item"><%= @drug.drug_name %></li>
-                薬の数
-                <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
-                <!-- 複数服用タイミングを表示させる　--->
-                服用タイミング
-                <% @drug.take_times.each do |take_time| %>
+<div class="mb-6 px-4 sm:px-6 md:px-8 lg:px-10">
+  <!-- Card Container -->
+  <div class="card shadow-xl max-w-md mx-auto">
+    <div class="flex justify-center items-center">
+      <!-- Card Content -->
+      <div class="card w-full bg-base-100 shadow-2xl my-3 p-4 sm:p-6">
+        <!-- Card Body -->
+        <div class="card-body">
+          <!-- Date Display -->
+          <div class="text-center text-lg font-bold mb-3"><%= l(@date) %></div>
           
-                <li><%= take_time.take_time %>:
-                <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
-                <% if check == true %>
-                  服用済み
-                <% else %>
-                  記録なし
-                <% end %>
-              </li></li> 
-                <% end %>
-                服用開始日
-                <li class="list-inline-item"><%= @drug.start_time %></li>
-                期間終了日
-                <li class="list-inline-item"><%= l @drug.end_time %></li>
-              </ul>
-              <div class='d-flex justify-content-end'>
-                <%= link_to "編集をする", with_date_edit_calendar_path(@drug)%>
-              </div>
-              <div class='d-flex justify-content-end'>
-                <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s)%>
-              </div>
-            </div>
-          </div> 
+          <!-- Drug Image -->
+          <div class="flex justify-center mb-4">
+            <%= image_tag @drug.image_url.url, size: '300x200', class: "block mx-auto my-4 rounded-lg shadow-md" %>
+          </div>
+          
+          <!-- Drug Details List -->
+          <ul class="space-y-2 text-sm sm:text-base">
+            <li class="font-semibold">病院名: <span class="font-normal"><%= @drug.hospital_name %></span></li>
+            <li class="font-semibold">薬名: <span class="font-normal"><%= @drug.drug_name %></span></li>
+            <li class="font-semibold">薬の数: <span class="font-normal"><%= @drug.number_of_tablets %></span></li>
+            
+            <!-- Take Times List -->
+            <li class="font-semibold">服用タイミング:</li>
+            <ul class="list-disc pl-4">
+              <% @drug.take_times.each do |take_time| %>
+                <li class="font-normal">
+                  <%= take_time.take_time %>: 
+                  <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
+                  <span class="<%= check == true ? 'text-green-500' : 'text-red-500' %>">
+                    <%= check == true ? '服用済み' : '記録なし' %>
+                  </span>
+                </li>
+              <% end %>
+            </ul>
+
+            <li class="font-semibold">服用開始日: <span class="font-normal"><%= @drug.start_time %></span></li>
+            <li class="font-semibold">期間終了日: <span class="font-normal"><%= l @drug.end_time %></span></li>
+          </ul>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-end space-x-2 mt-4">
+            <%= link_to "編集をする", with_date_edit_calendar_path(@drug, date: @date), class: "btn btn-primary btn-sm" %>
+            <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
+          </div>
         </div>
+      </div>
     </div>
   </div>
-
-  
+</div>

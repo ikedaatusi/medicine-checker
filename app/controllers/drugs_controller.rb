@@ -34,7 +34,6 @@ class DrugsController < ApplicationController
     if @drug.save
       redirect_to drugs_path, status: :see_other, notice: "薬を登録しました"
     else
-      flash.now[:danger] = t('登録できませんでした')
       render :new, status: :unprocessable_entity
     end
     
@@ -56,7 +55,7 @@ class DrugsController < ApplicationController
       # set_check_time
       redirect_to "/drugs", status: :see_other, notice: "薬を編集しました"
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
