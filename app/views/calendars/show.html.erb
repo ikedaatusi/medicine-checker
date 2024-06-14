@@ -1,6 +1,6 @@
 <div class="mb-6 px-4 sm:px-6 md:px-8 lg:px-10">
   <!-- Card Container -->
-  <div class="card shadow-xl max-w-md mx-auto">
+  <div class="max-w-md mx-auto">
     <div class="flex justify-center items-center">
       <!-- Card Content -->
       <div class="card w-full bg-base-100 shadow-2xl my-3 p-4 sm:p-6">
@@ -40,6 +40,9 @@
 
           <!-- Action Buttons -->
           <div class="flex justify-end space-x-2 mt-4">
+          <div class="flex justify-center text-slate-600 mt-6">
+        <%= link_to "カレンダーに戻る", "/calendars", class: 'btn btn-outline bg-white border border-blue-600 text-blue-600 font-semibold rounded-md px-6 py-2 hover:bg-blue-100' %>
+      </div>
             <%= link_to "編集をする", with_date_edit_calendar_path(@drug, date: @date), class: "btn btn-primary btn-sm" %>
             <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
@@ -47,4 +50,3 @@
       </div>
     </div>
   </div>
-</div>
