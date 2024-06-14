@@ -1,56 +1,46 @@
-<% content_for(:title, t('.title')) %>
-
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1">
-    
-
-
-
-
-
-      <!-- 検索フォーム -->
-      <div class='text-cente flex justify-center mt-10'>
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-</svg>
-
-     <%= render 'drugs/search_form', q: @q, url: currently_taking_index_path %>
-    </div>
-  </div>
+<div class="flex justify-center w-full max-w-md mx-auto px-4 sm:px-6 lg:px-8">
+  <%= render 'drugs/search_form', q: @q, url: drugs_path, class: "w-full" %>
 </div>
-    <div class="flex justify-center mt-5">
-       <%= link_to new_drug_path, class:"w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" do %>
-       <p class="text-sm">薬を登録する</p>
-       <% end %>
+
+  <div class="flex justify-center mt-5 mb-5">
+  <%= link_to new_drug_path, class: "w-48 text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all shadow-md hover:shadow-lg transform hover:scale-105" do %>
+    <div class="flex items-center justify-center space-x-2">
+      <!-- Icon only on larger screens -->
+      <img class="hidden xl:block w-8 h-8" src="https://img.icons8.com/dusk/64/pills.png" alt="pills"/>
+      <p class="text-sm">薬を登録する</p>
     </div>
+  <% end %>
+</div>
 
      
-  <div class=" flex flex-col justify-center items-center">
-  <div class="container mx-auto px-10">
-<div class="inline-flex rounded-md shadow-sm">
+<div class="flex flex-col justify-center items-center w-full">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="inline-flex rounded-md shadow-sm w-full justify-center">
 <%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
       <p class="text-sm">薬一覧</p>
     <% end %>
   <%= link_to currently_taking_index_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
   <p class="text-sm">服用中の薬</p>
     <% end %>
-  <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+  <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
     <p class="text-sm">服用終了した薬</p>
     <% end %>
-  
+  </div>
+  </div>
 </div>
-<nav  class="p-4 bg-white border-l border-r rounded-lg w-85">
+
+<div class="flex flex-col items-center w-full px-4 sm:px-6 lg:px-8">
+  <nav class="bg-white border border-gray-200  w-full max-w-6xl">
 <%= l(@day)  %>
-<div class="container mx-auto px-4">
-  <div class="flex flex-wrap justify-start">
+<div class="p-4">
+      <div class="flex flex-wrap justify-start">
     <% if @drugs.present? %>
       <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
     <% else %>
       <p>薬登録がありません</p>
     <% end %>
   </div>
-  <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
+      <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
+    </div>
+  </nav>
 </div>
-</div>
-</div>
-</nav>
