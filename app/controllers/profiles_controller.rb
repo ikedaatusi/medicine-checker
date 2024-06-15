@@ -11,10 +11,10 @@ class ProfilesController < ApplicationController
 
     def update
         if @user.update(user_params)
-            redirect_to profile_path, success: "ユーザーを更新しました"
+            redirect_to profile_path, status: :see_other, notice: "ユーザーを更新しました"
         else
             flash.now[:danger] = "ユーザーを更新できませんでした"
-            render :edit
+            render :edit, status: :see_other, notice: "ユーザーを更新しました"
         end
     end
 

@@ -38,7 +38,7 @@ end
 if alert_message.present?
   render :new, alert: alert_message
 else
-  redirect_to with_date_show_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), notice: notice_message
+  redirect_to medication_checks_path, notice: notice_message
 end
   end
 
@@ -57,7 +57,7 @@ end
                 .where(id: special_drug_ids)
                 .where('start_time <= ?', Date.today)
                 .where('end_time >= ?', Date.today)
-                
+      @medication_checks = MedicationCheck.where(drug: @drugs, check_time: @day)          
     end
     
 

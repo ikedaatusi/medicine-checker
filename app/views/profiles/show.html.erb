@@ -4,38 +4,40 @@
       <!-- Page Title -->
       <h2 class="text-2xl font-bold mb-4 text-gray-900">マイページ</h2>
 
+      <%# User Name %>
+        <li class="flex items-center justify-center">
+          <i class="fas fa-user mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+          </li>
+          <span class="text-gray-600"><%= current_user.name %></span>
+        
+
       <!-- User Information -->
-      <ul class="list-none my-3 flex-grow space-y-2">
+      
         <%# User Email %>
         <li class="flex items-center justify-center">
           <i class="fas fa-envelope mr-2 text-gray-600"></i>
           <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:email)) %></strong>
+          </li>
           <span class="text-gray-600"><%= current_user.email %></span>
-        </li>
         
-        <%# User Name %>
-        <li class="flex items-center justify-center">
-          <i class="fas fa-user mr-2 text-gray-600"></i>
-          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
-          <span class="text-gray-600"><%= current_user.name %></span>
-        </li>
         
         <%# Number of Registered Medications %>
         <li class="flex items-center justify-center">
           <i class="fas fa-pills mr-2 text-gray-600"></i>
           <strong class="mr-2 text-gray-700">登録されている薬の数</strong>
+          </li>
           <span class="text-gray-600"><%= @drug_count %></span>
-        </li>
-      </ul>
-
+    
       <!-- Action Buttons -->
-      <div class="card-actions flex flex-col md:flex-row justify-around mt-3 space-y-3 md:space-y-0 md:space-x-4">
+      <div class="flex flex-col items-center">
         <%# Edit Profile Button %>
         <%= link_to '編集', edit_profile_path(@user), class: 'btn btn-success text-white bg-green-500 py-2 px-4 rounded-full shadow-lg hover:bg-green-600' %>
-        
+        </div>
         <%# Reminder Notification Link %>
         <div class="flex flex-col items-center">
-          <span class="mb-2 text-gray-700">リマインダー通知</span>
+        <h2 class="text-2xl font-bold mb-4 text-gray-900">リマインダー通知</h2>
+          
           <a href="https://lin.ee/LI2aSSh" class="inline-block">
             <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" width="150" height="52" alt="友だち追加" class="rounded-full shadow-md hover:shadow-lg">
           </a>

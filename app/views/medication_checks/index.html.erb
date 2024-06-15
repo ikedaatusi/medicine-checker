@@ -1,26 +1,30 @@
 
 <div class="flex flex-col justify-center items-center mt-10">
   <div class="container mx-auto px-10">
-<div class="inline-flex rounded-md shadow-sm">
-<%= link_to medication_checks_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
-      <p class="text-sm">今日服用予定からチェック</p>
-    <% end %>
-  <%= link_to "/calendars", class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
-  <p class="text-sm">カレンダーから服用日を選ぶ</p>
-    <% end %> 
-</div>
-<nav  class="p-4 bg-white border-l border-r rounded-lg w-85">
-<div class="container mx-auto px-4">
-<h1>日付<%= l(@day)  %></h1>
-  <div class="flex flex-wrap justify-start">
-  
-    <% if @drugs.present? %>
-      <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
-    <% else %>
-      <p>薬登録がありません</p>
-    <% end %>
+    <!-- 上部のナビゲーションリンク -->
+    <div class="inline-flex rounded-md shadow-sm">
+      <%= link_to medication_checks_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
+        <p class="text-sm">今日服用予定からチェック</p>
+      <% end %>
+      <%= link_to "/calendars", class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+        <p class="text-sm">カレンダーから服用日を選ぶ</p>
+      <% end %>
+    </div>
+
+    <!-- メインのカード表示 -->
+    <div class="p-4 bg-white border-l border-r rounded-lg w-85">
+      <div class="container mx-auto px-4">
+        <h1 class="text-xl font-bold">日付: <%= l(@day) %></h1>
+
+        <!-- 薬情報のカード -->
+        <div class="flex flex-wrap justify-start">
+          <% if @drugs.present? %>
+            <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
+          <% else %>
+            <p class="text-gray-600">薬登録がありません</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
-</nav>
