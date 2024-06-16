@@ -1,14 +1,27 @@
-<h3>パスワード再設定</h3>
-<%= form_with model: @user, url: password_reset_path(@token) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-	<%= f.label :email %>
-    <%= @user.email %>
+<h3 class="text-xl font-bold mb-6 text-center">パスワード再設定</h3>
+<%= form_with model: @user, url: password_reset_path(@token), class: "w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md" do |f| %>
+    <% if f.object.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
+            <%= render 'shared/error_messages', object: f.object %>
+        </div>
+    <% end %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <div class="mb-4">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <p class="border bg-gray-100 p-2 rounded text-gray-600"><%= @user.email %></p>
+    </div>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <div class="mb-4">
+        <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
 
-    <%= f.submit 'リセット' %>
+    <div class="mb-6">
+        <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+        <%= f.submit 'リセット', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
 <% end %>
