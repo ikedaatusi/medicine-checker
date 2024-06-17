@@ -25,14 +25,14 @@ ja:
   #         has_many: "%{record}が存在しているので削除できません"
   activerecord:
     models:
-      user: 'ユーザー'
+      user: '名前'
       article: '投稿'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        name: 'ユーザー名'
+        name: '名前'
       drug:
         hospital_name: '病院名'
         drug_name: "薬名"

@@ -1,5 +1,6 @@
 <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>">
+  <%# フラッシュメッセージのタイプに応じて色を選ぶ %>
+  <div class="alert alert-<%= flash_class(message_type) %>">
     <%= message %>
   </div>
 <% end %>

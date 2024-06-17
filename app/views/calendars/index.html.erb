@@ -1,7 +1,11 @@
 <div class=" flex flex-col justify-center items-center">
   <div class="container mx-auto px-10">
 
-
+ <li class="flex items-center justify-center">
+          <i class="fas fa-user mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+          <span class="text-gray-600"><%= current_user.name %></span>
+          </li>
 
 <ul class="list-reset flex border-b">
   <li class="-mb-px mr-1">
@@ -35,6 +39,22 @@
     
      <% end %>
 </div>
+<div class="mt-4 mb-4 p-4 rounded border border-gray-200 bg-white sm:p-6 md:p-8">
+  <h3 class="text-lg font-semibold mb-2 sm:text-xl md:text-2xl">色の説明:</h3>
+  <ul class="list-disc pl-4 space-y-2">
+    <li class="flex items-center mb-2">
+      <span class="inline-block w-4 h-4 mr-2 bg-gray-300 rounded"></span>
+      <span>Gray - 全て未チェック</span>
+    </li>
+    <li class="flex items-center mb-2">
+      <span class="inline-block w-4 h-4 mr-2 bg-yellow-200 rounded"></span>
+      <span>Yellow - 一部チェック済み</span>
+    </li>
+    <li class="flex items-center mb-2">
+      <span class="inline-block w-4 h-4 mr-2 bg-green-200 rounded"></span>
+      <span>Green - 全てチェック済み</span>
+    </li>
+  </ul>
 </div>
 </div>
 

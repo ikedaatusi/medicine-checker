@@ -1,4 +1,6 @@
 class AlreadyTakenController < ApplicationController
+  before_action :require_login
+  
   def index
     #服用期間が終了した薬を表示させる
     @day = Date.today

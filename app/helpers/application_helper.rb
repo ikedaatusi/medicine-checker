@@ -21,5 +21,27 @@ module ApplicationHelper
         end
       end  
 
+      def flash_color(type)
+        case type
+        when "notice"
+          "success"  # 成功: 緑色
+        when "alert"
+          "error"    # エラー: 赤色
+        else
+          "info"     # その他の情報: 青色
+        end
+      end
+
+      def flash_class(type)
+        case type
+        when "notice"
+          "info"  # 青色
+        when "alert"
+          "error" # 赤色
+        else
+          "info"  # デフォルトは青色
+        end
+      end
+
       
 end

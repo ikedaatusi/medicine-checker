@@ -1,4 +1,6 @@
 class DrugConfirmationsController < ApplicationController
+  before_action :require_login
+  
   def index
     @q = current_user.drugs.joins(:medication_checks).where(medication_checks: { check: true }).ransack(params[:q])
     @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
