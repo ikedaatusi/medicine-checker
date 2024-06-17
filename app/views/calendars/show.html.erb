@@ -47,7 +47,7 @@
           <!-- Action Buttons -->
           <div class="flex justify-end space-x-2 mt-4">
             <%= link_to "編集をする", with_date_edit_calendar_path(@drug, date: @date), class: "btn btn-primary btn-sm" %>
-            <%= link_to "チェックする", new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
+            <%= link_to "記録する", new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
           
           <!-- Back to Calendar Button -->
