@@ -1,4 +1,6 @@
 class CurrentlyTakingController < ApplicationController
+  before_action :require_login
+  
   def index #服用期間中の薬だけ表示させる
     @day = Date.today
     special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)

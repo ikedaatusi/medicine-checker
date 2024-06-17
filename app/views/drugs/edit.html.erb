@@ -45,7 +45,9 @@
                   <%= qu.label '(必須)タイミング', class: "block text-sm font-medium text-gray-700" %>
                   <div class="form-group flex items-center space-x-3">
                     <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-gray-900 form-select p-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" } %>
-                    <button type="button" class="btn btn-danger remove-ingredient bg-red-500 text-white p-2 rounded-lg"><i class="fas fa-trash-alt"></i></button>
+                    <button type="button" class="remove-ingredient flex items-center justify-center bg-red-500 text-white p-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+    <i class="fas fa-trash-alt"></i>
+</button>
                   </div>
                   <% end %>
                 </div>
@@ -59,26 +61,31 @@
                 <%= qu.label '(必須)タイミング', class: "block text-sm font-medium text-gray-700" %>
                 <div class="form-group flex items-center space-x-3">
                   <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-gray-900 form-select p-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" } %>
-                  <button type="button" class="btn btn-danger remove-ingredient bg-red-500 text-white p-2 rounded-lg"><i class="fas fa-trash-alt"></i></button>
+                  <button type="button" class="remove-ingredient flex items-center justify-center bg-red-500 text-white p-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
+    <i class="fas fa-trash-alt"></i>
+</button>
                 </div>
               </div>
             </div>
           <% end %>
           <div id="ingredients"></div>
           <div class="text-center">
-            <button type="button" id="add-ingredient" class="btn mb-4 bg-pink-500 text-white p-2 rounded-lg">+</button>
+            <button type="button" id="add-ingredient" class="btn mb-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center">
+    <i class="fas fa-plus"></i>
+</button>
           </div>
         
         <div class="text-center">
-         <%= form.submit "更新", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
-       </div>
+    <%= form.submit "更新", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 shadow-lg hover:shadow-xl transition duration-300" %>
+</div>
+
        </div>
       <% end %>
-      <div class="flex justify-center mt-5">
-       <%= link_to "/drugs", class:"w-[200px] focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" do %>
-       <p class="text-sm">キャンセル</p>
-       <% end %>
-    </div>
+      <div class="flex justify-center ">
+    <%= link_to "キャンセル", "/drugs", class: 'btn btn-outline bg-white border border-blue-600 text-blue-600 font-semibold rounded-md px-6 py-2 hover:bg-blue-100' %>
+        
+    
+</div>
     </div>
 </div>
 

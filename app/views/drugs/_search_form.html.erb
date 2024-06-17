@@ -1,7 +1,12 @@
 <%= search_form_for q, url: url, html: { class: 'w-full max-w-lg mt-10' } do |f| %>
   <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 mb-5">
-    <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control flex-1 border-gray-300 rounded-lg px-4 py-2', placeholder: "病院名または薬名で検索" %>
+    <%= f.search_field :hospital_name_or_drug_name_cont, class: 'form-control flex-1 border-gray-300 rounded-lg px-4 py-2', placeholder: "病院名または薬名" %>
     <%= f.select :take_times_take_time_eq, TakeTime.take_times.keys.map.with_index { |k, i| [t("enum.take_time.take_time.#{k}"), i] }, { include_blank: "未選択" }, { class: "form-select text-gray-700 min-w-[120px] rounded border border-gray-300 px-4 py-2" } %>
-    <%= f.submit '検索', class: 'btn bg-blue-500 text-white hover:bg-blue-600 rounded-lg px-5 py-2.5 transition-all' %>
+    <%= f.submit class: 'btn bg-blue-500 text-white hover:bg-blue-600 rounded-lg px-5 py-2.5 transition-all flex items-center justify-center' do %>
+      <!-- Heroicons search icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1111.446 3.032l3.675 3.674a1 1 0 01-1.415 1.415l-3.674-3.675A6 6 0 012 8z" clip-rule="evenodd" />
+      </svg>
+    <% end %>
   </div>
 <% end %>

@@ -3,15 +3,19 @@
     <div class="text-center flex justify-center">
       <div class="my-3 card w-3/4 bg-base-100 shadow-2xl">
         <div class="card-body">
-          <%= l(@date) %>
+          <li class="flex items-center justify-center">
+          <h1 class="text-xl font-bold">日付: <%= l(@date) %></h1>
+          </li>
+              <li class="flex items-center justify-center">
+              <i class="fas fa-user mr-2 text-gray-600"></i>
+              <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+              <span class="text-gray-600"><%= current_user.name %></span>
+          </li>
           <%= form_with url: calendars_path, local: true do |form| %>
             <ul class="list-inline">
-              病院名
-              <li class="list-inline-item"><%= @drug.hospital_name %></li>
-              薬名
-              <li class="list-inline-item"><%= @drug.drug_name %></li>
-              薬の数
-              <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
+              <li><strong>病院名:</strong> <span class="text-gray-700"><%= @drug.hospital_name %></span></li>
+              <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
+              <li><strong>薬の数:</strong> <span class="text-gray-700"><%= @drug.number_of_tablets %></span></li>
             </ul>
             <div class="text-center flex justify-center">
               <div class="my-3 card w-85 bg-base-100 shadow-2xl">

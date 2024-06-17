@@ -4,22 +4,22 @@
 </div>
 
 <!-- Register Drug Button -->
-<div class="flex justify-center mt-5 mb-10">
+<!--div class="flex justify-center mt-5 mb-10">
   <%= link_to new_drug_path, class: "w-48 text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all shadow-md hover:shadow-lg transform hover:scale-105" do %>
     <div class="flex items-center justify-center space-x-2">
-      <!-- Icon only on larger screens -->
       <img class="hidden xl:block w-8 h-8" src="https://img.icons8.com/dusk/64/pills.png" alt="pills"/>
       <p class="text-sm">薬を登録する</p>
       
     </div>
   <% end %>
-</div>
+</div-->
 
 
 <!-- Drug List Navigation -->
-<div class="flex flex-col justify-center items-center w-full">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="inline-flex rounded-md shadow-sm w-full justify-center">
+<div class="flex flex-col justify-center items-center mt-10 mb-5">
+  <div class="container mx-auto px-10">
+    <!-- 上部のナビゲーションリンク -->
+   <div class="inline-flex rounded-md shadow-sm">
 <%= link_to "/drugs", class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
       <p class="text-sm">薬一覧</p>
     <% end %>
@@ -30,14 +30,16 @@
     <p class="text-sm">服用終了した薬</p>
     <% end %>
   </div>
-  </div>
-</div>
-
 
 <!-- Drug List and Pagination -->
-<div class="flex flex-col items-center w-full px-4 sm:px-6 lg:px-8">
-  <nav class="bg-white border border-gray-200  w-full max-w-6xl">
-    <div class="p-4">
+<div class="p-4 bg-white border-l border-r rounded-lg w-85">
+      <div class="container mx-auto">  
+  <li class="flex items-center justify-center mt-5">
+          <i class="fas fa-user mr-2 text-gray-600"></i>
+          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+          <span class="text-gray-600"><%= current_user.name %></span>
+          </li>
+    
       <div class="flex flex-wrap justify-start">
         <% if @drugs.present? %>
           <%= render @drugs %>
@@ -46,6 +48,6 @@
         <% end %>
       </div>
       <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
+      </div>
     </div>
-  </nav>
-</div>
+  </div>
