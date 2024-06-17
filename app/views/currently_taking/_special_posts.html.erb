@@ -12,8 +12,8 @@
           <li><strong>病院名:</strong> <span class="text-gray-700"><%= drug.hospital_name %></span></li>
           <li><strong>薬名:</strong> <span class="text-gray-700"><%= drug.drug_name %></span></li>
           <li><strong>薬の数:</strong> <span class="text-gray-700"><%= drug.number_of_tablets %></span></li>
-          <li><strong>期間開始日:</strong> <span class="text-gray-700"><%= drug.start_time %></span></li>
-          <li><strong>期間終了日:</strong> <span class="text-gray-700"><%= drug.end_time %></span></li>
+          <li><strong>期間開始日:</strong> <span class="text-gray-700"><%= l drug.start_time %></span></li>
+          <li><strong>期間終了日:</strong> <span class="text-gray-700"><%= l drug.end_time %></span></li>
           <li><strong>服用タイミング:</strong></li>
           <% drug.take_times.each do |take_time| %>
             <li class="text-gray-600"><%= take_time.take_time %></li>

@@ -1,4 +1,4 @@
- <div class="w-full flex-grow bg-yellow-50">
+ <div>
 <%= render 'shared/error_messages', object: @drug %>
   <div class="w-full text-center flex justify-center">
     <div class="mx-auto my-3 card w-85 bg-white shadow-xl rounded-lg p-6">
@@ -43,11 +43,11 @@
                 <%= qu.hidden_field :_destroy %>
                 <div class="flex-1">
                   <%= qu.label '(必須)タイミング', class: "block text-sm font-medium text-gray-700" %>
-                  <div class="form-group flex items-center space-x-3">
+                  <div class="form-group flex items-center space-x-20">
                     <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-gray-900 form-select p-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" } %>
                     <button type="button" class="remove-ingredient flex items-center justify-center bg-red-500 text-white p-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
-    <i class="fas fa-trash-alt"></i>
-</button>
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
                   </div>
                   <% end %>
                 </div>
@@ -59,11 +59,11 @@
               <%= qu.hidden_field :_destroy %>
               <div class="flex-1">
                 <%= qu.label '(必須)タイミング', class: "block text-sm font-medium text-gray-700" %>
-                <div class="form-group flex items-center space-x-3">
+                <div class="form-group flex items-center space-x-20">
                   <%= qu.select :take_time, TakeTime.take_times.keys.map { |k| [t("enum.take_time.take_time.#{k}"), k] }, { include_blank: "未選択" }, { class: "text-gray-900 form-select p-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" } %>
                   <button type="button" class="remove-ingredient flex items-center justify-center bg-red-500 text-white p-2 rounded-lg shadow-lg hover:bg-red-600 transition duration-300">
-    <i class="fas fa-trash-alt"></i>
-</button>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
                 </div>
               </div>
             </div>

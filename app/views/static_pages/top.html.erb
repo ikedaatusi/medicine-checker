@@ -32,26 +32,26 @@
 </div>
 
 <!-- Put this part before </body> tag -->
-<!--button class="btn" onclick="my_modal_1.showModal()">アプリの使い方</button>
+<button class="btn" onclick="my_modal_1.showModal()">アプリの使い方</button>
 <dialog id="my_modal_1" class="modal">
   <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">薬の登録機能<%= video_tag("/assets/videos/text.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4">薬の登録機能<%= video_tag("/assets/videos/drug_create.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
   
   
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">カレンダーから服用タイミングの確認と詳細<%= video_tag("/assets/videos/text.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4">チェックから服用を記録<%= video_tag("/assets/videos/check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
   
  
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">チェックしたらカレンダーの色が変わる<%= video_tag("/assets/videos/text.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4">カレンダーから服用を記録<%= video_tag("/assets/videos/calendar_check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
  
  
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">上のチェックから今日の服用チェックで簡単にその日のチェックをすることができる<%= video_tag("/assets/videos/text.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4">カレンダーから予定や記録を確認出来ます。<%= video_tag("/assets/videos/calendar_check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
   
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">LINE連携するとラインからリマインダー通知が届くようになります。<%= video_tag("/assets/videos/text.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <h3 class="text-lg font-bold"></h3>
+    <p class="py-4">LINE連携するとラインからリマインダー通知が届くようになります。<%= image_tag 'reminder.png', size: '500x200'%></p>
    <div class="modal-action">
       <form method="dialog">
        
@@ -59,7 +59,7 @@
       </form>
     </div>
   </div>
-</dialog-->
+</dialog>
 
 <div class="lg:flex justify-center items-center gap-4 space-y-4">
   <div class="card w-96 bg-base-100 shadow-xl mx-auto flex flex-col justify-center h-full">
