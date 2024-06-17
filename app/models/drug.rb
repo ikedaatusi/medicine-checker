@@ -11,6 +11,7 @@ class Drug < ApplicationRecord
   # validate :start_date_in_future
   validate :end_date_within_limit
   validate :end_date_after_start_date
+  validate :take_times_presence
 
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "drug_name", "end_time", "hospital_name", "id", "image_url", "number_of_tablets", "start_time", "updated_at", "user_id"]
@@ -25,6 +26,11 @@ class Drug < ApplicationRecord
   # def start_date_in_future
   #   errors.add(:start_time, "は明以降で！") if start_time.present? && start_time < Date.today
   # end
+  def take_times_presence
+    if take_times.reject(&:marked_for_destruction?).none? { |tt| tt.take_time.present? }
+      errors.add(:base, "タイミングを追加してください")
+    end
+  end
 
   def end_date_within_limit
     if start_time.present? && end_time.present?

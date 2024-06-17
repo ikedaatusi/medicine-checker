@@ -10,29 +10,13 @@ class DrugsController < ApplicationController
   end
 
   def create
-     @drug = current_user.drugs.new(drug_params)
-     
-    #  sabun = (@drug.start_time - Date.today).to_i
-    #  unless sabun >= 0
-    #   flash[:danger] = "開始日は明日以降で！"
-    #    render :new
-    #    return
-    #  end
-    #  sabun = (@drug.end_time - @drug.start_time).to_i
-    #   unless sabun <= 180
-    #   flash[:danger] = "期間は最長180日間まで!"
-    #   render :new
-    #   return
-    #   end
-    #   unless sabun >= 0
-    #   flash[:danger] = "終了日は開始日以降で！"
-    #   render :new
-    #   return
-    #   end
-    
-      
-    if @drug.save
-      redirect_to drugs_path, status: :see_other, notice: "薬を登録しました"
+    @drug = current_user.drugs.new(drug_params)
+    if @drug.valid? && @drug.take_times.any? { |tt| tt.take_time.present? }
+      if @drug.save
+        redirect_to drugs_path, status: :see_other, notice: "薬を登録しました"
+      else
+        render :new, status: :unprocessable_entity
+      end
     else
       render :new, status: :unprocessable_entity
     end

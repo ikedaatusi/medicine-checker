@@ -30,7 +30,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   def default_url
-    'demo.png'
+    'mdc.png'
   end
 
   def extension_allowlist
