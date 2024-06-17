@@ -12,7 +12,7 @@
            家族の飲んでいる薬を登録
             <br>
             <br>
-          チェックして大切な家族を守りましょう
+          記録して大切な家族を守りましょう
           </h1>
           <div class="flex justify-center mt-10 mb-10">
             <% if logged_in? %>
@@ -36,19 +36,15 @@
 <dialog id="my_modal_1" class="modal">
   <div class="modal-box">
     <h3 class="text-lg font-bold"></h3>
-    <p class="py-4">薬の登録機能<%= video_tag("/assets/videos/drug_create.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <p class="py-4">薬の登録機能<%= image_tag 'create.png', size: '500x200'%></p>
   
   
     <h3 class="text-lg font-bold"></h3>
-    <p class="py-4">チェックから服用を記録<%= video_tag("/assets/videos/check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
-  
+    <p class="py-4">チェックから服用を記録<%= image_tag 'kiroku1.png', size: '500x200'%></p>
+    <p class="py-4">チェックから服用を記録<%= image_tag 'kiroku2.png', size: '500x200'%></p>
  
     <h3 class="text-lg font-bold"></h3>
-    <p class="py-4">カレンダーから服用を記録<%= video_tag("/assets/videos/calendar_check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
- 
- 
-    <h3 class="text-lg font-bold"></h3>
-    <p class="py-4">カレンダーから予定や記録を確認出来ます。<%= video_tag("/assets/videos/calendar_check.mp4", :controls => true, :loop => true, :size => 20*20, autoplay: true, muted: true) %></p>
+    <p class="py-4">カレンダーから予定や記録を確認出来ます。<%= image_tag 'calendar.png', size: '500x200'%></p>
   
     <h3 class="text-lg font-bold"></h3>
     <p class="py-4">LINE連携するとラインからリマインダー通知が届くようになります。<%= image_tag 'reminder.png', size: '500x200'%></p>
@@ -77,7 +73,7 @@
   <div class="card w-96 bg-base-100 shadow-xl mx-auto flex flex-col justify-center h-full">
     <div class="card-body">
       <h2 class="card-title">3. チェックをつけましょう</h2>
-      <p>服用したらチェックをつけましょう。<br>カレンダーから状況が見れます。</p>
+      <p>服用したらチェックをつけましょう。<br>カレンダーから記録状況が見れます。</p>
     </div>
   </div>
 </div>
