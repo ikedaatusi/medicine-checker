@@ -24,7 +24,7 @@
           <%= link_to edit_drug_path(drug), class: "btn btn-circle btn-outline btn-success hover:bg-green-500 hover:border-green-500 transition transform hover:scale-105" do %>
             <i class="fas fa-edit"></i>
           <% end %>
-          <%= link_to drug_path(drug), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-circle btn-outline btn-error hover:bg-red-500 hover:border-red-500 transition transform hover:scale-105" do %>
+          <%= link_to drug_path(drug), id: "button-delete-#{ drug.id}", data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-circle btn-outline btn-error hover:bg-red-500 hover:border-red-500 transition transform hover:scale-105" do %>
             <i class="fas fa-trash"></i>
           <% end %>
         </div>

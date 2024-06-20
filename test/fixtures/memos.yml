@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drug_id: 
+  body: MyString
+  create_time: 2024-06-18 16:50:40
+
+two:
+  drug_id: 
+  body: MyString
+  create_time: 2024-06-18 16:50:40
