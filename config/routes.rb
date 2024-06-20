@@ -9,6 +9,17 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :tops
   resource :profile,only: %i[show edit update]
+  # resources :memos
+  resources :memos, only: [:new, :create, :edit, :update, :destroy] do
+    member do
+      get ':date/:drug_id', action: :new, as: 'with_date_new'
+      post ':date/:drug_id', action: :create, as: 'with_date_create'
+      get ':date/:drug_id', action: :show, as: 'with_date_show'
+      get 'edit/:date/:drug_id', action: :edit, as: 'with_date_edit'
+      patch ':date/:drug_id', action: :update, as: 'with_date_update'
+      delete '', action: :destroy, as: 'with_date_delete'
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :drug_confirmations, only: [:index, :show, :edit, :update] do
     member do
@@ -24,8 +35,10 @@ Rails.application.routes.draw do
   end
   resources :calendars, only: [:index, :show, :new, :edit, :update, :create] do
     member do
+      get ':date/:drug_id', action: :new, as: 'with_date_new'
+      post ':date/:drug_id', action: :create, as: 'with_date_create'
       get ':date', action: :show, as: 'with_date_show'
-      get 'edit/:date', action: :edit, as: 'with_date_edit'
+      get ':date/edit/:drug_id', action: :edit, as: 'with_date_edit'
       patch ':date', action: :update, as: 'with_date_update'
     end
   end

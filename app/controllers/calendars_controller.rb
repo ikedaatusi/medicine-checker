@@ -27,7 +27,6 @@ class CalendarsController < ApplicationController
 
     params[:medication_checks_attributes].each do |key, mc_params|
   @drug = current_user.drugs.find(mc_params[:drug_id])
-  
   @take_time = TakeTime.find(mc_params[:take_time_id])
   check_time = mc_params[:check_time]
 
@@ -52,7 +51,8 @@ end
 if alert_message.present?
   render :new, alert: alert_message
 else
-  redirect_to with_date_show_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), notice: notice_message
+  @drug = current_user.drugs.find(params[:id])
+  redirect_to with_date_show_calendar_path(@drug, date: params[:date]), notice: notice_message
 end
   end
 
@@ -74,9 +74,10 @@ end
     end
 
     def show
-        @date = params[:date] ? Date.parse(params[:date]) : Date.today
         @drug = Drug.find(params[:id])
+        @date = params[:date] ? Date.parse(params[:date]) : Date.today
         @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
+        @memos= Memo.where(drug: @drug, create_time: @date)
     end
 
     def edit

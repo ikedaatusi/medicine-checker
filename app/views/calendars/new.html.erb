@@ -11,7 +11,7 @@
               <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
               <span class="text-gray-600"><%= current_user.name %></span>
           </li>
-          <%= form_with url: calendars_path, local: true do |form| %>
+          <%= form_with url: with_date_create_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), local: true do |form| %>
             <ul class="list-inline">
               <li><strong>病院名:</strong> <span class="text-gray-700"><%= @drug.hospital_name %></span></li>
               <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
@@ -37,7 +37,7 @@
                   <% end %>
                   <div class="text-center">
                     <%= form.submit "保存", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900" %>
-                    </div>
+                   </div>
                    <div class="text-center">
                     <%= link_to 'キャンセルする', with_date_show_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), class: "w-[200px] mb-10 focus:outline-none text-white bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-gray-900" %>
                   </div>
