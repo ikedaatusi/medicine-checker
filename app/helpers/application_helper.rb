@@ -23,12 +23,12 @@ module ApplicationHelper
 
       def default_meta_tags
         {
-          site: 'Pluspo',
-          title: '都内スポーツ施設の横断検索サービス',
+          site: 'medicine-checker',
+          title: '服用管理サービス',
           reverse: true,
           charset: 'utf-8',
-          description: 'Pluspoを使えば「スポーツ・日時・場所」の好きな組み合わせで自由にスポーツ施設を検索できます。',
-          keywords: 'スポーツ,スポーツ施設,東京',
+          description: '大切な家族の服用記録をすることができる。',
+          keywords: '福祉,介護',
           canonical: request.original_url,
           separator: '|',
           og: {

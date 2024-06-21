@@ -103,9 +103,12 @@
     </div>
   </div>
 </div>
-<%= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}/&text=家庭教師のワイズの先生です/", title: 'Twitter', target: '_blank' %>
 
 
+<%= link_to "https://x.com/intent/tweet?url=#{request.url}/&text=メディカルチェッカー/", target: '_blank', class: "btn btn-primary flex items-center justify-center gap-2" do %>
+  <i class="fa-brands fa-x-twitter"></i>
+  <span><%= t('fetch_ais.share') %></span>
+<% end %>
 
 
 
