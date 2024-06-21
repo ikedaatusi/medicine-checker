@@ -40,13 +40,6 @@ class MemosController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
-
-  # def index
-  # end
-
-  # def show
-  # end
 
   def edit
     @drug = current_user.drugs.find(params[:drug_id])
@@ -58,13 +51,13 @@ class MemosController < ApplicationController
   end
 
   def destroy
+    @drug = Drug.find(params[:drug_id])
     @memo = Memo.find_by(id: params[:id])
     if @memo.destroy
-      @drug = Drug.find(params[:drug_id])
-      redirect_to  with_date_show_calendar_path(@drug, date: params[:date]), notice: "薬を削除しました"
+      redirect_to  with_date_show_calendar_path(@drug, date: params[:date]), notice: "メモを削除しました"
     else
       flash.now[:alert] = "削除に失敗しました"
-      render 'show'
+      render with_date_show_calendar_path(@drug, date: params[:date]), status: :see_other
     end
   end
 
