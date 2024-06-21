@@ -63,7 +63,8 @@ gem 'simple_calendar', '~> 2.4'
 gem 'rails-i18n'
 #デバックツール
 gem 'pry-rails'
-#
+#X共有
+gem 'meta-tags'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
