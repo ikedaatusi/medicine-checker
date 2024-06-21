@@ -44,12 +44,8 @@ module ApplicationHelper
           twitter: {
             card: 'summary_large_image', # Twitterで表示する場合は大きいカードにする
             site: '@', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
-            image: image_url('mdc.png'), # 配置するパスやファイル名によって変更すること
-            url: request.original_url
+            image: image_url('mdc.png') # 配置するパスやファイル名によって変更すること
           }
         }
-      end
-      def twitter_share_link
-        link_to 'Twitter', "https://twitter.com/share?url=#{CGI.escape(request.original_url)}&text=#{CGI.escape('都内スポーツ施設の横断検索サービス')}", title: 'Twitter', target: '_blank', class: 'twitter-share-button'
       end
 end
