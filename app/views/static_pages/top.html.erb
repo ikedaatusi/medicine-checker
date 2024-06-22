@@ -30,7 +30,7 @@
           <!-- アプリの使い方リンク -->
           <label for="my_modal_7" class="btn">アプリの使い方</label>
           <!-- シェアリンク -->
-          <%= link_to "Xでシェア", "https://x.com/intent/tweet?url=https://medicine-checker-e23a28d80a08.herokuapp.com&text=メディカルチェッカー", target: '_blank', class: "px-4 py-2 text-sm font-medium text-white bg-black border border-black rounded-full hover:bg-gray-900 hover:text-gray-200 focus:z-10 focus:ring-2 focus:ring-gray-700 focus:text-gray-200 dark:bg-black dark:border-black dark:hover:text-gray-400 dark:hover:bg-gray-800 dark:focus:ring-gray-500 dark:focus:text-gray-400"%> 
+          <%= link_to "Xでシェア", "https://x.com/intent/tweet?url=#{request.url}&text=メディカルチェッカー", target: '_blank', class: "px-4 py-2 text-sm font-medium text-white bg-black border border-black rounded-full hover:bg-gray-900 hover:text-gray-200 focus:z-10 focus:ring-2 focus:ring-gray-700 focus:text-gray-200 dark:bg-black dark:border-black dark:hover:text-gray-400 dark:hover:bg-gray-800 dark:focus:ring-gray-500 dark:focus:text-gray-400"%> 
         </div>
       </div>
     </div>
