@@ -1,0 +1,2 @@
+class DrugName < ApplicationRecord
+end

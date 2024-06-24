@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :drug_names
   root 'static_pages#top'
   resources :already_taken
   resources :currently_taking
   resources :password_resets, only: [:new, :create, :edit, :update]
   # root 'medication_checks#index'
-  resources :drugs 
+  resources :drugs
   resources :medication_checks
   resources :users, only: %i[new create]
   resources :tops
@@ -42,6 +43,7 @@ Rails.application.routes.draw do
       patch ':date', action: :update, as: 'with_date_update'
     end
   end
+
 
   get 'login', to: 'user_sessions#new' 
   post 'login', to: 'user_sessions#create'

@@ -56,6 +56,13 @@ class DrugsController < ApplicationController
     end
   end
 
+  def search
+    @drug_names = DrugName.where("drug_name LIKE ?", "%#{params[:q]}%").limit(10)
+    respond_to do |format|
+      format.json { render json: @drug_names }
+    end
+  end
+
   private
 
   def set_drug
