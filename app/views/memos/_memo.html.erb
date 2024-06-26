@@ -1,0 +1,10 @@
+<% if memo.present? %>
+  <%= turbo_frame_tag memo do %>
+    <p><%= memo.body %></p>
+    <div class="card-title flex justify-around mt-4 space-x-2">
+      <%= render 'memos/crud_menus', memo: memo %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Memo not found.</p>
+<% end %>

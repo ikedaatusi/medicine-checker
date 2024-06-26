@@ -13,7 +13,7 @@ class DrugsController < ApplicationController
     @drug = current_user.drugs.new(drug_params)
     if @drug.valid? && @drug.take_times.any? { |tt| tt.take_time.present? }
       if @drug.save
-        redirect_to drugs_path, status: :see_other, notice: "薬を登録しました"
+        redirect_to medication_checks_path, status: :see_other, notice: "薬を登録しました"
       else
         render :new, status: :unprocessable_entity
       end

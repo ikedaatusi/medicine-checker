@@ -46,24 +46,24 @@
 
           <!-- Action Buttons -->
           <div class="flex justify-end space-x-2 mt-4">
-          <%= link_to "メモ", with_date_new_memo_path(drug_id: @drug, date: @date.to_s), class: "btn btn-primary btn-sm" %>
+          
             <%= link_to "編集をする", with_date_edit_calendar_path(date: @date, drug_id: @drug.id), class: "btn btn-primary btn-sm" %>
             <%= link_to "記録する", with_date_new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
           <h1 class="text-xl font-bold">メモ</h1>
+          <div id="memos">
+          <%= turbo_frame_tag 'drug_modal' do %>
           <% if @memos %>
              <% @memos.each do |memo| %>
-               <p><%= memo.body %></p>
-               <div class="card-title flex justify-around mt-4 space-x-2">
-          <%= link_to with_date_edit_memo_path(memo.id, date: @date.to_s, drug_id: @drug.id), class: "btn btn-circle btn-outline btn-success hover:bg-green-500 hover:border-green-500 transition transform hover:scale-105" do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
-          <%= link_to with_date_delete_memo_path(memo.id), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-circle btn-outline btn-error hover:bg-red-500 hover:border-red-500 transition transform hover:scale-105" do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        </div>
+            <%= render memo %>
              <% end %>
           <% end %>
+          <% end %>
+          
+          </div>
+          <div class="flex justify-end space-x-2 mt-4">
+          <%= link_to 'メモ', with_date_new_memo_path(drug_id: @drug, date: @date.to_s), class: 'btn btn-sm md:btn-md btn-neutral', data: { turbo_frame: 'drug_modal' } %>
+          </div>
           <!-- Back to Calendar Button -->
           <div class="flex justify-center text-slate-600 mt-6">
             <%= link_to "カレンダーに戻る", "/calendars", class: 'btn btn-outline bg-white border border-blue-600 text-blue-600 font-semibold rounded-md px-6 py-2 hover:bg-blue-100' %>
