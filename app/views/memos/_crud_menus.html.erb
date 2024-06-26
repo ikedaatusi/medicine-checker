@@ -1,0 +1,8 @@
+<% if memo.present? %>
+  <%= link_to with_date_edit_memo_path(memo.id, date: @date.to_s, drug_id: @drug.id), data: { turbo_frame: 'drug_modal' }, class: "btn btn-circle btn-outline btn-success hover:bg-green-500 hover:border-green-500 transition transform hover:scale-105" do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+  <%= link_to with_date_delete_memo_path(memo.id), data: { turbo_method: :delete, turbo_confirm: "削除しますか？"}, class: "btn btn-circle btn-outline btn-error hover:bg-red-500 hover:border-red-500 transition transform hover:scale-105" do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+<% end %>

@@ -4,6 +4,8 @@
 
 import { application } from "./application"
 
+import DrugModalController from "./drug_modal_controller"
+application.register("drug-modal", DrugModalController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
