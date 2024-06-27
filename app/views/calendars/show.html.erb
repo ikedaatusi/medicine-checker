@@ -50,8 +50,10 @@
             <%= link_to "編集をする", with_date_edit_calendar_path(date: @date, drug_id: @drug.id), class: "btn btn-primary btn-sm" %>
             <%= link_to "記録する", with_date_new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
-          <h1 class="text-xl font-bold">メモ</h1>
-          <div id="memos">
+<h1 class="text-xl font-bold">
+  <span class="uppercase">メモ</span>
+  <span class="text-gray-400">（調子などメモに残そう）</span>
+</h1>          <div id="memos">
           <%= turbo_frame_tag 'drug_modal' do %>
           <% if @memos %>
              <% @memos.each do |memo| %>

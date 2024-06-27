@@ -16,11 +16,7 @@
 
             <%= link_to "今日の記録する", medication_checks_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col "  %>
        </div>
-       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
        
-        <img class="text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-1"width="32" height="32" src="https://img.icons8.com/dusk/64/pills.png" alt="pills"/>            
-        <%= link_to "登録", new_drug_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
-       </div>
        
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
 <svg class="w-6 h-6 text-gray-800 dark:text-white text-white hidden sm:hidden md:hidden xl:block transition duration-300  lg:flex-col " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -45,6 +41,11 @@
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
             <%= link_to "ガチャを回す", "#", class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
        </div>-->
+       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+       
+<img class="text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col " width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/plus.png" alt="plus"/>
+ <%= link_to "登録", new_drug_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" %>
+       </div>
        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
        <img class="text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col " width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>
             <%= link_to "マイページ", profile_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2"  %>
@@ -92,12 +93,7 @@
 
             <% end %>
           </li>
-           <li class="hover:rounded-xl mt-4">
-            <%= link_to new_drug_path, class: 'btn btn-ghost flex items-center mx-2' do %>
-            <img class="text-white  xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-1"width="32" height="32" src="https://img.icons8.com/dusk/64/pills.png" alt="pills"/>
-              <p class="text-sm">登録</p>
-            <% end %>
-          </li>
+           
           <li class="hover:rounded-xl mt-4">
             <%= link_to "/calendars", class: 'btn btn-ghost flex items-center mx-2' do %>
             <svg class="w-6 h-6 text-gray-800 dark:text-white text-white xl:block transition duration-300  lg:flex-col " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -129,6 +125,12 @@
               <p class="text-sm">ガチャを回す</p>
             <% end %>
           </li>-->
+          <li class="hover:rounded-xl mt-4">
+            <%= link_to new_drug_path, class: 'btn btn-ghost flex items-center mx-2' do %>
+<img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/plus.png" alt="plus"/>
+              <p class="text-sm">登録</p>
+            <% end %>
+          </li>
           <li class="hover:rounded-xl mt-4">
             <%= link_to profile_path, class: 'btn btn-ghost flex items-center mx-2' do %>
             <img class="text-white xl:block hover:text-blue-600 transition duration-300  lg:flex-col " width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>

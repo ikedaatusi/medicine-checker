@@ -60,6 +60,8 @@ end
       @medication_checks = MedicationCheck.where(drug: @drugs, check_time: @day)          
     end
     
+    
+  
 
   private
 

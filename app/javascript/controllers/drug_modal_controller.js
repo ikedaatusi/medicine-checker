@@ -11,6 +11,7 @@ export default class extends Controller {
    close(event) {
     // event.detail.successは、レスポンスが成功ならtrueを返します。
     // バリデーションエラー時は、falseを返します。
+    
     if (event.detail.success) {
       //"hidden"クラスを追加し、モーダルを閉じます。
       this.backGroundTarget.classList.add("hidden");
