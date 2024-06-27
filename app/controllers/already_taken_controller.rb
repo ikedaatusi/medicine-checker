@@ -1,6 +1,6 @@
 class AlreadyTakenController < ApplicationController
   before_action :require_login
-  
+
   def index
     #服用期間が終了した薬を表示させる
     @day = Date.today
@@ -9,14 +9,5 @@ class AlreadyTakenController < ApplicationController
     @q = @search_results.ransack(params[:q])
     @drugs =  @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page]).per(12)
     
-  end
-
-  def show
-  end
-
-  def new
-  end
-
-  def edit
   end
 end
