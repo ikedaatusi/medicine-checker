@@ -19,13 +19,11 @@
           <div class="flex justify-center mb-4">
             <%= image_tag @drug.image_url.url, size: '300x200', class: "block mx-auto my-4 rounded-lg shadow-md" %>
           </div>
-          
           <!-- Drug Details List -->
           <ul class="space-y-2 text-sm sm:text-base">
             <li class="font-semibold">病院名: <span class="font-normal"><%= @drug.hospital_name %></span></li>
             <li class="font-semibold">薬名: <span class="font-normal"><%= @drug.drug_name %></span></li>
             <li class="font-semibold">薬の数: <span class="font-normal"><%= @drug.number_of_tablets %></span></li>
-            
             <!-- Take Times List -->
             <li class="font-semibold">服用タイミング:</li>
             <ul class="list-disc pl-4">
@@ -39,7 +37,6 @@
                 </li>
               <% end %>
             </ul>
-
             <li class="font-semibold">服用開始日: <span class="font-normal"><%= l @drug.start_time %></span></li>
             <li class="font-semibold">期間終了日: <span class="font-normal"><%= l @drug.end_time %></span></li>
           </ul>
@@ -50,21 +47,20 @@
             <%= link_to "編集をする", with_date_edit_calendar_path(date: @date, drug_id: @drug.id), class: "btn btn-primary btn-sm" %>
             <%= link_to "記録する", with_date_new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
-<h1 class="text-xl font-bold">
-  <span class="uppercase">メモ</span>
-  <span class="text-gray-400">（調子などメモに残そう）</span>
-</h1>          <div id="memos">
+          <h1 class="text-xl font-bold">
+            <span class="uppercase">メモ</span>
+            <span class="text-gray-400">（調子などメモに残そう）</span>
+          </h1>          <div id="memos">
           <%= turbo_frame_tag 'drug_modal' do %>
-          <% if @memos %>
-             <% @memos.each do |memo| %>
-            <%= render memo %>
-             <% end %>
+              <% if @memos %>
+                <% @memos.each do |memo| %>
+                  <%= render memo %>
+                <% end %>
+              <% end %>
           <% end %>
-          <% end %>
-          
           </div>
           <div class="flex justify-end space-x-2 mt-4">
-          <%= link_to 'メモ', with_date_new_memo_path(drug_id: @drug, date: @date.to_s), class: 'btn btn-sm md:btn-md btn-neutral', data: { turbo_frame: 'drug_modal' } %>
+            <%= link_to 'メモ', with_date_new_memo_path(drug_id: @drug, date: @date.to_s), class: 'btn btn-sm md:btn-md btn-neutral', data: { turbo_frame: 'drug_modal' } %>
           </div>
           <!-- Back to Calendar Button -->
           <div class="flex justify-center text-slate-600 mt-6">

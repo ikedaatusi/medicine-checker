@@ -1,43 +1,37 @@
 <div class=" flex flex-col justify-center items-center">
   <div class="container mx-auto px-10">
-
- <li class="flex items-center justify-center mt-4 mb-4">
-          <i class="fas fa-user mr-2 text-gray-600"></i>
-          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
-          <span class="text-gray-600"><%= current_user.name %></span>
-          </li>
-
-<ul class="list-reset flex border-b">
-  <li class="-mb-px mr-1">
-    <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" href="/calendars">登録された薬</a>
-  </li>
-  <!--li class="mr-1">
-    <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" href="/drug_confirmations">チェック済みの薬</a>
-  </li-->
-</ul>
-
-<div>
+    <li class="flex items-center justify-center mt-4 mb-4">
+      <i class="fas fa-user mr-2 text-gray-600"></i>
+        <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+        <span class="text-gray-600"><%= current_user.name %></span>
+    </li>
+    <ul class="list-reset flex border-b">
+      <li class="-mb-px mr-1">
+        <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" href="/calendars">登録された薬</a>
+      </li>
+    </ul>
+  <div>
 
   <%= month_calendar events: @drugs do |date, drugs| %>
     <span class="block text-xs font-semibold text-gray-900"><%= date.day %></span>
-   <% drugs.each do |drug| %>
-    <% 
-      # Determine the status for the drug on the current date
-      total_checks = MedicationCheck.where(drug: drug, check_time: date).count
-      completed_checks = MedicationCheck.where(drug: drug, check_time: date, check: true).count
+      <% drugs.each do |drug| %>
+        <% 
+          total_checks = MedicationCheck.where(drug: drug, check_time: date).count
+          completed_checks = MedicationCheck.where(drug: drug, check_time: date, check: true).count
       
-      drug_status = 'gray' # Default to gray
-      if completed_checks == total_checks && total_checks > 0
-        drug_status = 'green'
-      elsif completed_checks > 0
-        drug_status = 'yellow'
-      end
-    %>
-    <div class="mt-1 <%= drug_status == 'green' ? 'bg-green-200' : drug_status == 'yellow' ? 'bg-yellow-200' : 'bg-gray-300' %>">
-<%= link_to drug.drug_name, with_date_show_calendar_path(id: drug.id, date: date.to_s), class: "w-full rounded hover:text-indigo-900" %>      </div>
-    <% end %>
-    
-     <% end %>
+          drug_status = 'gray' # Default to gray
+          if completed_checks == total_checks && total_checks > 0
+            drug_status = 'green'
+          elsif completed_checks > 0
+            drug_status = 'yellow'
+          end
+        %>
+        <div class="mt-1 <%= drug_status == 'green' ? 'bg-green-200' : drug_status == 'yellow' ? 'bg-yellow-200' : 'bg-gray-300' %>">
+          <%= link_to drug.drug_name, with_date_show_calendar_path(id: drug.id, date: date.to_s), class: "w-full rounded hover:text-indigo-900" %>      
+        </div>
+      <% end %>
+
+  <% end %>
 </div>
 <div class="mt-4 mb-4 p-4 rounded border border-gray-200 bg-white sm:p-6 md:p-8">
   <h3 class="text-lg font-semibold mb-2 sm:text-xl md:text-2xl">色の説明:</h3>
@@ -55,7 +49,6 @@
       <span>Green - 全てチェック済み</span>
     </li>
   </ul>
-</div>
 </div>
 </div>
 
