@@ -6,7 +6,6 @@
         <figure class="mx-auto my-4">
           <%= image_tag drug.image_url_url, size: '300x200', class: "block mx-auto rounded-lg" %>
         </figure>
-        
         <!-- カードの内容 -->
         <div class="card-body text-center flex flex-col p-4">
           <ul class="list-none my-3 flex-grow text-left space-y-2">
@@ -25,12 +24,12 @@
                 </span>
               </li>
             <% end %>
-            <li><strong>登録日:</strong> <span class="text-gray-700"><%= l drug.created_at, format: :short %></span></li>
+            <!--li><strong>登録日:</strong> <span class="text-gray-700"><%= l drug.created_at, format: :short %></span></li-->
           </ul>
           <!-- チェックするボタン -->
           <div class="hover:rounded-xl mt-4">
             <%= link_to new_medication_check_path(drug_id: drug.id), class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm">記録する</p>
+              <p class="text-sm">チェックする</p>
             <% end %>
           </div>
         </div>
