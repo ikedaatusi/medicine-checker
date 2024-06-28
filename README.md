@@ -39,6 +39,7 @@
 
 |メモ機能|リマインド機能|
 |:-:|:-:|
+|[![Image from Gyazo](https://i.gyazo.com/414f38056a91695c5f8bfb44f57508ef.gif)](https://gyazo.com/414f38056a91695c5f8bfb44f57508ef)|[![Image from Gyazo](https://i.gyazo.com/87e2af56a7a9b5168b525b91629c91c0.jpg)](https://gyazo.com/87e2af56a7a9b5168b525b91629c91c0)|
 
 
 
