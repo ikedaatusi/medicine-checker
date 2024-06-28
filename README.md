@@ -37,7 +37,7 @@
 |チェック機能|カレンダー|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/386c7a613a096a62ecf1760f5b29b17f.gif)](https://gyazo.com/386c7a613a096a62ecf1760f5b29b17f)|[![Image from Gyazo](https://i.gyazo.com/b2a8f25fdc5b07123fa9052fc4363890.jpg)](https://gyazo.com/b2a8f25fdc5b07123fa9052fc4363890)|
-|服用した薬をチェックすると記録することができます|カレンダー機能を追加することで、服用状況を視覚的に把握できるようにし、自己管理能力を高めることができます。また、家族や介護者もカレンダーを通じて服用状況を確認できるため、適切なサポートを提供しやすくなります。|
+|服用した薬をチェックすると記録することができます。|カレンダー機能を追加することで、服用状況を視覚的に把握できるようにし、自己管理能力を高めることができます。また、家族や介護者もカレンダーを通じて服用状況を確認できるため、適切なサポートを提供しやすくなります。|
 
 |メモ機能|リマインド機能|
 |:-:|:-:|
@@ -55,8 +55,7 @@
 Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&node-id=0%3A1&mode=design&t=GLFmunPY1SkPYLIq-1
 
 ### ER図
-![Image from Gyazo](https://i.gyazo.com/28fd7b36c3ef50760c8dffe4121bea7f.png)
-
+[![Image from Gyazo](https://i.gyazo.com/c49d5464e528b378d63c49f042aa3d46.jpg)](https://gyazo.com/c49d5464e528b378d63c49f042aa3d46)
 
 ■技術スタック
 | カテゴリ | コンテンツ技術 |
