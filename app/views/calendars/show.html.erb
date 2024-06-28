@@ -45,7 +45,7 @@
           <div class="flex justify-end space-x-2 mt-4">
           
             <%= link_to "編集をする", with_date_edit_calendar_path(date: @date, drug_id: @drug.id), class: "btn btn-primary btn-sm" %>
-            <%= link_to "記録する", with_date_new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
+            <%= link_to "チェックする", with_date_new_calendar_path(drug_id: @drug, date: @date.to_s), class: "btn btn-secondary btn-sm" %>
           </div>
           <h1 class="text-xl font-bold">
             <span class="uppercase">メモ</span>

@@ -29,10 +29,14 @@
 |[![Image from Gyazo](https://i.gyazo.com/6d4bdb77b0b3fe339b32161c9405b13d.jpg)](https://gyazo.com/6d4bdb77b0b3fe339b32161c9405b13d)|[![Image from Gyazo](https://i.gyazo.com/e96c5a3edbc3e0fef4519839deee39eb.jpg)](https://gyazo.com/e96c5a3edbc3e0fef4519839deee39eb)|
 |`sorcery`で会員登録・ログイン機能を実装しました。|メールアドレスで登録したユーザーはパスワードを再設定できます。|
 
-・薬登録機能
-・検索機能
-・チェック機能
-・カレンダー
+|薬登録機能|検索機能|
+|:-:|:-:|
+|[![Image from Gyazo](https://i.gyazo.com/c01afc12aefa5270857989065226e079.gif)](https://gyazo.com/c01afc12aefa5270857989065226e079)|[![Image from Gyazo](https://i.gyazo.com/152b074102348d74b9d4d540e36b1da5.gif)](https://gyazo.com/152b074102348d74b9d4d540e36b1da5)|
+|
+|チェック機能|カレンダー|
+|:-:|:-:|
+|[![Image from Gyazo](https://i.gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d.gif)](https://gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d)|[![Image from Gyazo](https://i.gyazo.com/b2a8f25fdc5b07123fa9052fc4363890.jpg)](https://gyazo.com/b2a8f25fdc5b07123fa9052fc4363890)|
+
 ・メモ機能
 ・リマインド機能
 
