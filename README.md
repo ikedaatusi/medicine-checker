@@ -36,7 +36,7 @@
 |チェック機能|カレンダー|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d.gif)](https://gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d)|
-|[![Image from Gyazo](https://i.gyazo.com/b2a8f25fdc5b07123fa9052fc4363890.jpg)](https://gyazo.com/b2a8f25fdc5b07123fa9052fc4363890)|
+||
 
 ・メモ機能
 ・リマインド機能
