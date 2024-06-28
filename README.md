@@ -32,11 +32,10 @@
 |薬登録機能|検索機能|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/c01afc12aefa5270857989065226e079.gif)](https://gyazo.com/c01afc12aefa5270857989065226e079)|[![Image from Gyazo](https://i.gyazo.com/152b074102348d74b9d4d540e36b1da5.gif)](https://gyazo.com/152b074102348d74b9d4d540e36b1da5)|
-|
+
 |チェック機能|カレンダー|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d.gif)](https://gyazo.com/e3bff2048541330f6bb1b3e5e89ca09d)|
-||
 
 ・メモ機能
 ・リマインド機能
