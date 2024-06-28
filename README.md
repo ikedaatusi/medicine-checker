@@ -27,7 +27,7 @@
 |新規登録| ログイン|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/6d4bdb77b0b3fe339b32161c9405b13d.jpg)](https://gyazo.com/6d4bdb77b0b3fe339b32161c9405b13d)|[![Image from Gyazo](https://i.gyazo.com/e96c5a3edbc3e0fef4519839deee39eb.jpg)](https://gyazo.com/e96c5a3edbc3e0fef4519839deee39eb)|
-|`魔法`で会員登録・ログイン機能が実装されました。メールアドレスと LINE でのログインを選択できるようになります。メールアドレスで登録したユーザーはパスワードを再設定できます。|
+|`sorcery`で会員登録が実装しました。メールアドレスで登録したユーザーはパスワードを再設定できます。
 
 ・薬登録機能
 ・検索機能
