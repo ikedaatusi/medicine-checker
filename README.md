@@ -32,16 +32,17 @@
 |薬登録機能|検索機能|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/c01afc12aefa5270857989065226e079.gif)](https://gyazo.com/c01afc12aefa5270857989065226e079)|[![Image from Gyazo](https://i.gyazo.com/152b074102348d74b9d4d540e36b1da5.gif)](https://gyazo.com/152b074102348d74b9d4d540e36b1da5)|
-|病院でもらった薬を登録して管理できる|`ransack`を使用して見たいプランをすぐに検索できるようにしています。
+|病院でもらった薬を登録して管理できる|`ransack`を使用して見たいプランをすぐに検索できるようにしています。|
 
 |チェック機能|カレンダー|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/386c7a613a096a62ecf1760f5b29b17f.gif)](https://gyazo.com/386c7a613a096a62ecf1760f5b29b17f)|[![Image from Gyazo](https://i.gyazo.com/b2a8f25fdc5b07123fa9052fc4363890.jpg)](https://gyazo.com/b2a8f25fdc5b07123fa9052fc4363890)|
-||カレンダー機能を追加することで、服用状況を視覚的に把握できるようにし、自己管理能力を高めることができます。家族や介護者もカレンダーを通じて服用状況を確認できるため、適切なサポートを提供しやすくなります|
+|服用した薬をチェックすると記録することができます|カレンダー機能を追加することで、服用状況を視覚的に把握できるようにし、自己管理能力を高めることができます。家族や介護者もカレンダーを通じて服用状況を確認できるため、適切なサポートを提供しやすくなります|
 
 |メモ機能|リマインド機能|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/414f38056a91695c5f8bfb44f57508ef.gif)](https://gyazo.com/414f38056a91695c5f8bfb44f57508ef)|[![Image from Gyazo](https://i.gyazo.com/87e2af56a7a9b5168b525b91629c91c0.jpg)](https://gyazo.com/87e2af56a7a9b5168b525b91629c91c0)|
+|家族の状態を薬と一緒に記録することができます|毎日夜の9時にリマインド通知がLINEに送られてきます|
 
 
 
