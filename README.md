@@ -36,6 +36,7 @@
 |チェック機能|カレンダー|
 |:-:|:-:|
 |[![Image from Gyazo](https://i.gyazo.com/386c7a613a096a62ecf1760f5b29b17f.gif)](https://gyazo.com/386c7a613a096a62ecf1760f5b29b17f)|[![Image from Gyazo](https://i.gyazo.com/b2a8f25fdc5b07123fa9052fc4363890.jpg)](https://gyazo.com/b2a8f25fdc5b07123fa9052fc4363890)|
+||カレンダー機能を追加することで、服用状況を視覚的に把握できるようにし、自己管理能力を高めることができます。家族や介護者もカレンダーを通じて服用状況を確認できるため、適切なサポートを提供しやすくなります|
 
 |メモ機能|リマインド機能|
 |:-:|:-:|
