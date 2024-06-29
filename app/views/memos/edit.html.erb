@@ -6,7 +6,7 @@
       </div>
       <h1 class="text-xl font-bold">日付: <%= l(@date) %></h1>
       <h2 class="text-2xl font-semibold mb-4 text-gray-800">メモ</h2>
-      <%= form_with model: @memos, url: with_date_update_memo_path(@memos.id, date: @date.to_s, drug_id: @drug.id), data: { action: "turbo:submit-end->drug-modal#close" }, method: :patch, local: true do |form| %>
+      <%= form_with model: @memo, url: with_date_update_memo_path(@memo.id, date: @date.to_s, drug_id: @drug.id), data: { action: "turbo:submit-end->drug-modal#close" }, method: :patch, local: true do |form| %>
         <div class="card-body space-y-6">
           <div class="form-group">
             <%= form.label :body, 'メモ', class: "block text-sm font-medium text-gray-700" %>

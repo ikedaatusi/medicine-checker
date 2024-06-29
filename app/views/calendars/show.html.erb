@@ -52,8 +52,8 @@
             <span class="text-gray-400">（調子などメモに残そう）</span>
           </h1>          <div id="memos">
           <%= turbo_frame_tag 'drug_modal' do %>
-              <% if @memos %>
-                <% @memos.each do |memo| %>
+              <% if @memo %>
+                <% @memo.each do |memo| %>
                   <%= render memo %>
                 <% end %>
               <% end %>
