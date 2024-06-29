@@ -76,7 +76,7 @@ end
         @drug = Drug.find(params[:id])
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
         @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
-        @memos= Memo.where(drug: @drug, create_time: @date)
+        @memo= Memo.where(drug: @drug, create_time: @date)
     end
 
     def edit

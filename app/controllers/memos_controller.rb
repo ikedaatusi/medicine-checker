@@ -15,12 +15,13 @@ class MemosController < ApplicationController
       @date = Date.today
     end
     @drug = Drug.find(params[:drug_id])
-    @memos = Memo.new
+    @memo = Memo.new
   end
 
   def create
     @memo = Memo.new(memo_params)
     @drug = Drug.find(params[:drug_id])
+    @date = params[:date]
     if @memo.save
       flash.now[:alert] = "レビューを投稿しました"
       # render turbo_stream: [
@@ -31,9 +32,10 @@ class MemosController < ApplicationController
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.prepend('memos', partial: 'memos/memo', locals: { memo: @memo }),
-            turbo_stream.replace('flash', partial: 'shared/flash_message')
+            turbo_stream.replace('flash', partial: 'shared/flash_message'),
           ]
         end
+        
         format.html { redirect_to with_date_show_calendar_path(@drug, date: params[:date]), notice: "メモが正常に作成されました。" }
       end
   
@@ -50,11 +52,12 @@ class MemosController < ApplicationController
 
   def update
     @drug = Drug.find(params[:drug_id])
-    @memos = Memo.find(params[:id])
-    if @memos.update(memo_params)
+    @memo = Memo.find(params[:id])
+    @date = params[:date]
+    if @memo.update(memo_params)
       flash.now[:alert] = "更新に成功しました"
       render turbo_stream: [
-        turbo_stream.update(@memos),
+        turbo_stream.update(@memo),
         turbo_stream.update("flash", partial: "shared/flash_message")
       ]
       # redirect_to  with_date_show_calendar_path(@drug, date: params[:date]), notice: "Memo updated successfully."
@@ -67,8 +70,8 @@ class MemosController < ApplicationController
   def edit
     @drug = current_user.drugs.find(params[:drug_id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @memos = Memo.find_by(id: params[:id], drug: @drug, create_time: @date)
-    if @memos.new_record?
+    @memo = Memo.find_by(id: params[:id], drug: @drug, create_time: @date)
+    if @memo.new_record?
       flash[:notice] = "No existing memo found for this date and drug, creating a new one."
     end
   end
@@ -76,6 +79,7 @@ class MemosController < ApplicationController
   def destroy
     # @drug = Drug.find(params[:drug_id])
     @memo = Memo.find_by(id: params[:id])
+    @date = params[:date]
   if @memo&.destroy
     flash.now[:notice] = "削除に成功しました"
     render turbo_stream: [
