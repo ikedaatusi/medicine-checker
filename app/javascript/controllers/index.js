@@ -10,5 +10,4 @@ application.register("drug-modal", DrugModalController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import MedicineModalController from "./medicine_modal_controller"
-application.register("medicine-modal", MedicineModalController)
+
