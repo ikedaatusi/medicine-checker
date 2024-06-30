@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
 
     def edit
     end
-      
 
     def update
         if @user.update(user_params)

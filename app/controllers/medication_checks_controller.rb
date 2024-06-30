@@ -66,8 +66,6 @@ end
   private
 
   def medication_check_params
-  #   params.permit(medication_checks_attributes: [:check, :check_time, :take_time_id, :drug_id])
-  # end
     params.require(:medication_check).permit(medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id])
   end
 end

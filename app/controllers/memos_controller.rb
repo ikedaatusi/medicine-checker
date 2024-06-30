@@ -24,10 +24,6 @@ class MemosController < ApplicationController
     @date = params[:date]
     if @memo.save
       flash.now[:alert] = "レビューを投稿しました"
-      # render turbo_stream: [
-      #   turbo_stream.prepend(@memo),
-      #   turbo_stream.update("flash", partial: "shared/flash_message")
-      # ]
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
@@ -38,11 +34,8 @@ class MemosController < ApplicationController
         
         format.html { redirect_to with_date_show_calendar_path(@drug, date: params[:date]), notice: "メモが正常に作成されました。" }
       end
-  
-      # redirect_to  with_date_show_calendar_path(@drug, date: params[:date]), notice: "保存しました"
     else
-      # @date = params[:date] ? Date.parse(params[:date]) : Date.today
-      # render :new, status: :unprocessable_entity
+    
       respond_to do |format|
         format.turbo_stream { render turbo_stream: turbo_stream.replace("drug_modal", partial: "memos/flash_message", locals: { memo: @memo }) }
         format.html { render :new }
@@ -60,7 +53,6 @@ class MemosController < ApplicationController
         turbo_stream.update(@memo),
         turbo_stream.update("flash", partial: "shared/flash_message")
       ]
-      # redirect_to  with_date_show_calendar_path(@drug, date: params[:date]), notice: "Memo updated successfully."
     else
       @date = params[:date] ? Date.parse(params[:date]) : Date.today
       render :edit, status: :unprocessable_entity
@@ -77,7 +69,6 @@ class MemosController < ApplicationController
   end
 
   def destroy
-    # @drug = Drug.find(params[:drug_id])
     @memo = Memo.find_by(id: params[:id])
     @date = params[:date]
   if @memo&.destroy

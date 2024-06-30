@@ -72,19 +72,5 @@ class DrugsController < ApplicationController
   def drug_params
     params.require(:drug).permit(:hospital_name, :drug_name, :number_of_tablets, :image_url, :start_time, :end_time, take_times_attributes: [:id, :take_time, :_destroy], medication_checks_attributes: [:id, :check, :check_time, :take_time_id, :drug_id, :_destroy])
   end
-
-  # def drug_param
-  #   params.require(:drug).permit(:drug_id, take_times_attributes: [:id, :take_time, :_destroy], medication_checks_attributes: [:id, :check, :check_time, :_destroy])
-  # end
-  
-
-#   def set_check_time
-#     today = Date.today + 4
-#     @drug.take_times.each do |take_time|
-#       unless @drug.medication_checks.exists?(check_time: today, take_time_id: take_time.id)
-#         @drug.medication_checks.build(check_time: today, take_time_id: take_time.id)
-#       end
-#     end
-#   end
 end
 
