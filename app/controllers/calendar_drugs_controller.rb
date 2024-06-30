@@ -1,9 +1,9 @@
 class CalendarDrugsController < ApplicationController
   before_action :require_login
-  
+
   def new
     date_param = params[:date]
-    
+
         if date_param.present?
           begin
             @date = Date.parse(date_param)
@@ -62,7 +62,6 @@ class CalendarDrugsController < ApplicationController
     @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
   end
   
-
   def show
   end
 end

@@ -66,7 +66,6 @@ end
         end
       end
 
-
     def index
         @q = current_user.drugs.ransack(params[:q])
         @drugs = @q.result(distinct: true).includes(:take_times).order(created_at: :desc).page(params[:page])
