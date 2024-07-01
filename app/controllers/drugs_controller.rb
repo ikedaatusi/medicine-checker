@@ -6,7 +6,6 @@ class DrugsController < ApplicationController
     @next_day = @day + 1
     @drug = Drug.new
     @drug.take_times.build
-    # @index = Time.now.to_i
   end
 
   def create
@@ -36,7 +35,6 @@ class DrugsController < ApplicationController
   def update
     
     if @drug.update(drug_params)
-      # set_check_time
       redirect_to "/drugs", status: :see_other, notice: "薬を編集しました"
     else
       render :edit, status: :unprocessable_entity

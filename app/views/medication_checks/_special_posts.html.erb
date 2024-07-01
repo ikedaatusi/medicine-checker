@@ -19,7 +19,7 @@
               <li class="font-normal">
                 <%= take_time.take_time %>:
                 <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
-                <span class="<%= check == true ?'text-green-500' : 'text-red-500' %>">
+                <span class="<%= check == true ? 'text-green-500' : 'text-red-500' %>">
                   <%= check == true ? '服用済み' : '記録なし' %>
                 </span>
               </li>

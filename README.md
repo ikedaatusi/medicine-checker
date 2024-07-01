@@ -66,10 +66,10 @@ Figma: https://www.figma.com/file/x7VPMITUhxidxNnQQRzX2z/LifeSpark?type=design&n
 | --- | --- |
 | サーバーサイド | Ruby on Rails ・Ruby|
 | cssフレームワーク | Tailwindcss + daisyUI |
-| web API |LINE Messaging API｜
+| web API | LINE Messaging API｜
 |ファイルサーバー | AWS S3 |
 | データベース | PostgreSQL |
 | アプリケーションサーバー | heroku |
 | バージョン管理ツール | GitHub |
-| その他 | Docker, GoogleAnalytics |
+| その他 | Docker・GoogleAnalytics |
 

@@ -49,7 +49,6 @@ end
     end
 
     def index
-      # @drug = Drug.find(params[:id])
       @day = Date.today
       special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)
       @drugs = current_user.drugs
