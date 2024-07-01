@@ -8,12 +8,10 @@ class CalendarDrugsController < ApplicationController
           begin
             @date = Date.parse(date_param)
           rescue ArgumentError
-            # Handle the invalid date case
             @date = Date.today
             flash[:alert] = "Invalid date provided, using today's date instead."
           end
         else
-          # Handle the case where no date is provided
           @date = Date.today
         end
         @drug = Drug.find(params[:drug_id])

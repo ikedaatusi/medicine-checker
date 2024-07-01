@@ -9,7 +9,6 @@ class Drug < ApplicationRecord
   validates :hospital_name, presence: true, length: { maximum: 10 }
   validates :drug_name, presence: true, length: { maximum: 10 }
   validates :number_of_tablets, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 200 }
-  # validate :start_date_in_future
   validate :end_date_within_limit
   validate :end_date_after_start_date
   validate :take_times_presence
@@ -24,9 +23,6 @@ class Drug < ApplicationRecord
   
   private
 
-  # def start_date_in_future
-  #   errors.add(:start_time, "は明以降で！") if start_time.present? && start_time < Date.today
-  # end
   def take_times_presence
     if take_times.reject(&:marked_for_destruction?).none? { |tt| tt.take_time.present? }
       errors.add(:base, "タイミングを追加してください")
