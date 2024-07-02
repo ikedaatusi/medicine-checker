@@ -17,6 +17,7 @@
         <%# User Email %>
         <li class="flex items-center justify-center">
           <i class="fas fa-envelope mr-2 text-gray-600"></i>
+          <!--Googleログインをした場合、メールアドレスを表示しない-->
           <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:email)) %></strong>
           </li>
           <span class="text-gray-600"><%= current_user.email %></span>
