@@ -46,4 +46,8 @@ Rails.application.routes.draw do
   end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   post '/callback' => 'webhook#callback'
+  
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback" 
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 end
