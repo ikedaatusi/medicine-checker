@@ -44,10 +44,12 @@ Rails.application.routes.draw do
       patch ':date', action: :update, as: 'with_date_update'
     end
   end
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  post '/callback' => 'webhook#callback'
-  
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback" 
   get "oauth/:provider" => "oauths#oauth", as: :auth_at_provider
+  
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  post '/callback' => 'webhook#callback'
+  
+  
 end
