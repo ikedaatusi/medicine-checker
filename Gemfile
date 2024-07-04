@@ -22,6 +22,7 @@ gem "puma", "~> 5.0"
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'omniauth-google-oauth2'
 
 # フロントエンド
 gem "stimulus-rails"
