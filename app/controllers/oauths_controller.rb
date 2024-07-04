@@ -13,10 +13,7 @@ class OauthsController < ApplicationController
     else
       begin
         # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
-        # signup_and_login(provider)
-        @user = create_from(provider)
-        reset_session
-        auto_login(@user)
+        signup_and_login(provider)
         redirect_to root_path, notice:"#{provider.titleize}アカウントでログインしました"
       rescue
         redirect_to root_path, alert:"#{provider.titleize}アカウントでのログインに失敗しました"
