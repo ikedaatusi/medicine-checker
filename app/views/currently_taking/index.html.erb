@@ -4,36 +4,33 @@
   
 <div class="flex flex-col justify-center items-center mt-10 mb-5">
   <div class="container mx-auto px-10">
-  <div class="inline-flex rounded-md shadow-sm">
-<%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
-      <p class="text-sm">薬一覧</p>
-    <% end %>
-  <%= link_to currently_taking_index_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
-  <p class="text-sm">服用中の薬</p>
-    <% end %>
-  <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
-    <p class="text-sm">服用終了した薬</p>
-    <% end %>
-  </div>
-  
-
+    <div class="inline-flex rounded-md shadow-sm">
+      <%= link_to "/drugs", class: "px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+        <p class="text-sm">薬一覧</p>
+      <% end %>
+      <%= link_to currently_taking_index_path, class: "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" do %>
+        <p class="text-sm">服用中の薬</p>
+      <% end %>
+      <%= link_to already_taken_index_path, class: "px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white" do %>
+        <p class="text-sm">服用終了した薬</p>
+      <% end %>
+    </div>
     <div class="p-4 bg-white border-l border-r rounded-lg w-85">
       <div class="container mx-auto"> 
           <li class="flex items-center justify-center mt-5">
-          <i class="fas fa-user mr-2 text-gray-600"></i>
-          <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
-          <span class="text-gray-600"><%= current_user.name %></span>
+            <i class="fas fa-user mr-2 text-gray-600"></i>
+            <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
+            <span class="text-gray-600"><%= current_user.name %></span>
           </li>
-
-        <div class="flex flex-wrap justify-start">
-         <% if @drugs.present? %>
-         <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
-         <% else %>
-         <p class="text-gray-500">薬登録がありません</p>
-         <% end %>
-         </div>
-      <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
+            <div class="flex flex-wrap justify-start">
+              <% if @drugs.present? %>
+                <%= render partial: 'special_posts', collection: @drugs, as: :drug %>
+              <% else %>
+                <p class="text-gray-500">薬登録がありません</p>
+              <% end %>
+            </div>
+          <%= render partial: 'kaminari/paginator', locals: { drugs: @drugs } %>
+      </div>
     </div>
   </div>
-</div>
 </div>
