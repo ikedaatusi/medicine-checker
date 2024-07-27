@@ -31,10 +31,10 @@
           登録
         </div>
        <% end %>
-            <%= link_to profile_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" do %>
-            <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-       <img class="text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col " width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>
-       マイページ
+       <%= link_to profile_path, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" do %>
+        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+          <img class="text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col " width="24" height="24" src="https://img.icons8.com/ios/50/FFFFFF/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>
+          マイページ
        </div>
        <% end %>
        <%= link_to logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" }, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" do %>
