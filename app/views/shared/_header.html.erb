@@ -38,20 +38,20 @@
        </div>
        <% end %>
        <%= link_to logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" }, class: "text-white hidden sm:hidden md:hidden xl:block hover:text-blue-600 transition duration-300  lg:flex-col px-2" do %>
-       <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
-       <svg class="w-6 h-6 text-gray-800 dark:text-white text-white hidden sm:hidden md:hidden xl:block  transition duration-300  lg:flex-col " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
-       </svg>          
-       ログアウト
-            </div>
-            <% end %>
-          <div class="drawer-end sm:block  xl:hidden absolute  fixed top-5 right-6 z-10 ">
-      <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
-        <label for="my-drawer-4" class="drawer-button btn btn-ghost md:mx-5">
-          <i class="fas fa-bars fa-2x" style="color:white"></i>
-        </label>
-      </div>
+        <div class="grid items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
+          <svg class="w-6 h-6 text-gray-800 dark:text-white text-white hidden sm:hidden md:hidden xl:block  transition duration-300  lg:flex-col " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+          </svg>          
+          ログアウト
+        </div>
+       <% end %>
+      <div class="drawer-end sm:block  xl:hidden absolute  fixed top-5 right-6 z-10 ">
+        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <label for="my-drawer-4" class="drawer-button btn btn-ghost md:mx-5">
+            <i class="fas fa-bars fa-2x" style="color:white"></i>
+            </label>
+          </div>
     
       <!--サイドメニュー -->
       <div class="drawer-side z-10">
