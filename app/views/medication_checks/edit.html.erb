@@ -2,10 +2,8 @@
 <%= render 'shared/error_messages', object: @drug %>
   <div class="w-full text-center flex justify-center">
     <div class="mx-auto my-3 card w-85 bg-white shadow-xl rounded-lg p-6">
-     
       <h2 class="text-2xl font-semibold mb-4 text-gray-800">お薬編集</h2>
       <%= form_with model: @drug, local: true do |form| %>
-         
         <div class="card-body space-y-6">
           <div class="form-group">
             <%= form.label :hospital_name, '(必須)病院名 ※10文字以内', class: "block text-sm font-medium text-gray-700" %>
@@ -37,7 +35,6 @@
             <%= form.date_field :end_time, class: 'w-full p-3 bg-gray-50 border border-gray-300 rounded-lg', required: true, value: @next_day %>
           </div>
           <%= form.label 'タイミング (必須)※必ず選択してください' %>
-          
           <%= form.fields_for :take_times do |qu| %>
             <div class="ingredient-fields flex items-center space-y-4">
               <%= qu.hidden_field :_destroy %>
@@ -59,8 +56,6 @@
       <% end %>
       <div class="flex justify-center ">
     <%= link_to "キャンセル", "/drugs", class: 'btn btn-outline bg-white border border-blue-600 text-blue-600 font-semibold rounded-md px-6 py-2 hover:bg-blue-100' %>
-        
-    
 </div>
     </div>
 </div>
