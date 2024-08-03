@@ -88,6 +88,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -98,7 +100,10 @@ group :development do
   gem 'letter_opener_web', '~> 2.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
