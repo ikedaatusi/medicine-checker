@@ -4,7 +4,6 @@
       <!-- Page Title -->
       <h2 class="text-2xl font-bold mb-4 text-gray-900">マイページ</h2>
 
-      <%# User Name %>
         <li class="flex items-center justify-center">
           <i class="fas fa-user mr-2 text-gray-600"></i>
           <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
@@ -14,7 +13,6 @@
 
       <!-- User Information -->
       
-        <%# User Email %>
         <li class="flex items-center justify-center">
           <i class="fas fa-envelope mr-2 text-gray-600"></i>
           <!--Googleログインをした場合、メールアドレスを表示しない-->
