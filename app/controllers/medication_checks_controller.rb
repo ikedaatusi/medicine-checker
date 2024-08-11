@@ -42,25 +42,21 @@ class MedicationChecksController < ApplicationController
   # end
   end
 
+  def show
+    @day = Date.today
+    @drug = current_user.find(params[:id])
+  end
 
-    def show
-      @day = Date.today
-      @drug = current_user.find(params[:id])
-    end
-
-    def index
-      @day = Date.today
-      special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)
-      @drugs = current_user.drugs
+  def index
+    @day = Date.today
+    special_drug_ids = current_user.drugs.where.not(start_time: nil).pluck(:id)
+    @drugs = current_user.drugs
                 .includes(:take_times)
                 .where(id: special_drug_ids)
                 .where('start_time <= ?', Date.today)
                 .where('end_time >= ?', Date.today)
-      @medication_checks = MedicationCheck.where(drug: @drugs, check_time: @day)          
-    end
-    
-    
-  
+    @medication_checks = MedicationCheck.where(drug: @drugs, check_time: @day)          
+  end
 
   private
 
