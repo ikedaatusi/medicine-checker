@@ -35,11 +35,11 @@ class MedicationChecksController < ApplicationController
       end
     end
   end
-  # if alert_message.present?
-  #   render :new, alert: alert_message
-  # else
-  #   redirect_to medication_checks_path, notice: notice_message
-  # end
+  if alert_message.present?
+    render :new, alert: alert_message
+  else
+    redirect_to medication_checks_path, notice: notice_message
+  end
   end
 
   def show
