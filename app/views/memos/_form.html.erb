@@ -1,13 +1,12 @@
  <%= form_with model: @memo, local: true, url: with_date_create_memo_path(date: @date, drug_id: @drug.id), data: { action: "turbo:submit-end->drug-modal#close" }, method: :post do |form| %>
-         <div class="card-body space-y-6">
-          <div class="form-group">
-            <%= form.label :body, 'メモ(気付いたことをメモしよう！)', class: "block text-sm font-medium text-gray-700" %>
-            <%= form.text_area :body, class: "w-full h-80 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400", required: true %>
-          </div>
-          <%= form.hidden_field :drug_id, value: @drug.id %>
-          <%= form.hidden_field :create_time, value: @date %>
-         
-          <div class="text-center">
-            <%= form.submit "保存", class: "w-full bg-yellow-400 hover:bg-yellow-500 text-white p-3 rounded-lg" %>
-          </div>
+  <div class="card-body space-y-6">
+    <div class="form-group">
+      <%= form.label :body, 'メモ(気付いたことをメモしよう！)', class: "block text-sm font-medium text-gray-700" %>
+      <%= form.text_area :body, class: "w-full h-80 p-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400", required: true %>
+    </div>
+      <%= form.hidden_field :drug_id, value: @drug.id %>
+      <%= form.hidden_field :create_time, value: @date %>
+    <div class="text-center">
+      <%= form.submit "保存", class: "w-full bg-yellow-400 hover:bg-yellow-500 text-white p-3 rounded-lg" %>
+    </div>
 <% end %>
