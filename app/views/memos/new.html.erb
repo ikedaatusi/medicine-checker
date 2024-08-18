@@ -26,7 +26,6 @@
   </div>
 </div>
 </div-->
-
 <%= turbo_frame_tag "drug_modal" do %>
   <div id="drug-id-<%= @drug.id %>" class="fixed inset-0 flex items-center justify-center z-50 bg-gray-500 bg-opacity-50" data-controller="drug-modal" data-drug-modal-target="backGround" data-action="click->drug-modal#closeBackground">
     <div class="modal-content bg-white rounded-xl shadow-lg p-10 w-18 md:w-[450px]" data-drug-modal-target="drugModal">
