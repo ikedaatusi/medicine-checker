@@ -19,7 +19,6 @@ class CalendarDrugsController < ApplicationController
       end
   end
 
-
   def create
     Rails.logger.debug("Medication Check Params: #{params[:medication_check]}")
         notice_message = nil
