@@ -12,7 +12,6 @@ class DrugConfirmationsController < ApplicationController
     @medication_checks = MedicationCheck.where(drug: @drug, check_time: @date)
   end
   
-
   def new
   end
 
