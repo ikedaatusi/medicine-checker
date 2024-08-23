@@ -8,7 +8,6 @@
           タイミングを確認するページ
             <!-- image_tagを使う形に修正してください -->
               <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
-            
             <ul class="list-inline">
                 病院名
                 <li class="list-inline-item"><%= @drug.hospital_name %></li>
@@ -17,20 +16,19 @@
                 薬の数
                 <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
                 <!-- 複数服用タイミングを表示させる　--->
-                <ul class="list-inline">
-            服用タイミング:
-            <% @drug.take_times.each do |take_time| %>
-              <li><%= take_time.take_time %>:
-                <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
-                <% if check == true %>
-                  服用済み
-                <% else %>
-                  記録なし
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-                
+                  <ul class="list-inline">
+                    服用タイミング:
+                    <% @drug.take_times.each do |take_time| %>
+                      <li><%= take_time.take_time %>:
+                        <% check = @medication_checks.find_by(take_time_id: take_time.id)&.check %>
+                        <% if check == true %>
+                          服用済み
+                        <% else %>
+                          記録なし
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
                 服用開始日
                 <li class="list-inline-item"><%= @drug.start_time %></li>
                 期間終了日
