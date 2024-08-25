@@ -1,10 +1,10 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div class="card">
     <div class='text-cente flex justify-center'>
-        <div class=" my-3 card w-100 bg-base-100 shadow-2xl">
-         <div class="card-body">
+      <div class=" my-3 card w-100 bg-base-100 shadow-2xl">
+        <div class="card-body">
           <%= l(@date) %>
-          タイミングを確認するページ
+            タイミングを確認するページ
             <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
               <ul class="list-inline">
                 病院名
@@ -32,11 +32,11 @@
                 期間終了日
                 <li class="list-inline-item"><%= l @drug.end_time %></li>
               </ul>
-              <div class='d-flex justify-content-end'>
-                <%= link_to "編集をする", edit_drug_path(@drug)%>
-              </div>
-            </div>
-          </div> 
+          <div class='d-flex justify-content-end'>
+            <%= link_to "編集をする", edit_drug_path(@drug)%>
+          </div>
         </div>
+      </div> 
     </div>
   </div>
+</div>
