@@ -52,7 +52,6 @@
         <div class="text-center">
     <%= form.submit "更新", class: "w-[200px] mb-10 focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 shadow-lg hover:shadow-xl transition duration-300" %>
 </div>
-
        </div>
       <% end %>
       <div class="flex justify-center ">
@@ -63,17 +62,16 @@
 </div>
 
 <script>
-        $(document).ready(function() {
-            $("#add-ingredient").click(function() {
-                var content = $("#ingredient-fields-template").html();
-                var uniqueId = new Date().getTime();
-                content = content.replace(/new_ingredient/g, uniqueId);
-                $("#ingredients").append(content);
-            });
-
-            $(document).on('click', '.remove-ingredient', function() {
-                $(this).closest('.ingredient-fields').find("input[name$='[_destroy]']").val('true');
-                $(this).closest('.ingredient-fields').hide();
-            });
-        });
-    </script>
+  $(document).ready(function() {
+    $("#add-ingredient").click(function() {
+      var content = $("#ingredient-fields-template").html();
+      var uniqueId = new Date().getTime();
+        content = content.replace(/new_ingredient/g, uniqueId);
+      $("#ingredients").append(content);
+    });
+    $(document).on('click', '.remove-ingredient', function() {
+      $(this).closest('.ingredient-fields').find("input[name$='[_destroy]']").val('true');
+      $(this).closest('.ingredient-fields').hide();
+    });
+  });
+</script>
