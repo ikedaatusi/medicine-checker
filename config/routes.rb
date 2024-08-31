@@ -24,12 +24,6 @@ Rails.application.routes.draw do
       delete '', action: :destroy, as: 'with_date_delete'
     end
   end
-  resources :drug_confirmations, only: [:index, :show, :edit, :update] do
-    member do
-      get ':date', action: :show, as: 'with_date_show'
-      get 'edit/:date', action: :edit, as: 'with_date_edit'
-    end
-  end
   resources :calendar_drugs, only: [:index, :show, :new] do
     member do
       get ':date', action: :new, as: 'with_date'
