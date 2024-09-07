@@ -1,28 +1,18 @@
 <div class="lg:flex justify-center items-center gap-4 space-y-4 mt-10 p-8 bg-gray-100 rounded-md shadow-lg">
   <div class="flex flex-col items-center p-6 bg-white shadow-md rounded-md space-y-6">
-    
     <div class="card-body text-center flex flex-col h-full">
       <h2 class="text-2xl font-bold text-blue-600 mb-4">プロフィール更新</h2>
       <p class="text-lg text-gray-600 mb-6">下記のフォームに記入して、あなたのプロフィールを更新してください。</p>
-      
       <%= form_with model: @user, url: profile_path, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-
         <div class="mb-4">
           <%= f.label :name, class: 'block text-sm font-medium text-gray-700' %>
           <%= f.text_field :name, class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-2.5' %>
         </div>
-        <!--Googleログインをした場合、メールアドレスを表示しない-->
-        <!--div class="mb-4">
-          <%= f.label :email, class: 'block text-sm font-medium text-gray-700' %>
-          <%= f.email_field :email, class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-400 focus:border-blue-400 block w-full p-2.5' %>
-        </div-->
-        
         <div class="mt-6">
           <%= f.submit "更新", class: "btn bg-blue-600 text-white font-semibold rounded-md px-6 py-2 hover:bg-blue-700" %>
         </div>
       <% end %>
-      
       <div class="flex justify-center text-slate-600 mt-6">
         <%= link_to "マイページに戻る", profile_path, class: 'btn btn-outline bg-white border border-blue-600 text-blue-600 font-semibold rounded-md px-6 py-2 hover:bg-blue-100' %>
       </div>
