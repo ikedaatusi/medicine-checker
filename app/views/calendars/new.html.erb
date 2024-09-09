@@ -12,14 +12,14 @@
               <span class="text-gray-600"><%= current_user.name %></span>
           </li>
           <%= form_with url: with_date_create_calendar_path(id: @drug.id, date: @date.to_s, take_times: @medication_checks), local: true do |form| %>
-            <ul class="list-inline">
-              <!--li><strong>病院名:</strong> <span class="text-gray-700"><%= @drug.hospital_name %></span></li>
-              <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
-              <li><strong>薬の数:</strong> <span class="text-gray-700"><%= @drug.number_of_tablets %></span></li-->
-            </ul>
             <div class="text-center flex justify-center">
               <div class="my-3 card w-85 bg-base-100 shadow-2xl">
                 <div class="card-body">
+                <ul class="list-inline">
+              <!--li><strong>病院名:</strong> <span class="text-gray-700"><%= @drug.hospital_name %></span></li-->
+              <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
+              <!--li><strong>薬の数:</strong> <span class="text-gray-700"><%= @drug.number_of_tablets %></span></li-->
+            </ul>
                 <h3>※服用したらチェックを入れて保存しましょう</h3>
                   <h3>服用するタイミング</h3>
                   <% @drug.take_times.each do |take_time| %>
