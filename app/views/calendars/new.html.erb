@@ -15,10 +15,10 @@
             <div class="text-center flex justify-center">
               <div class="my-3 card w-85 bg-base-100 shadow-2xl">
                 <div class="card-body">
-                <ul class="list-inline">
-                <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
-            </ul>
-                <h3>※服用したらチェックを入れて保存しましょう</h3>
+                  <ul class="list-inline">
+                    <li><strong>薬名:</strong> <span class="text-gray-700"><%= @drug.drug_name %></span></li>
+                  </ul>
+                  <h3>※服用したらチェックを入れて保存しましょう</h3>
                   <h3>服用するタイミング</h3>
                   <% @drug.take_times.each do |take_time| %>
                     <% medication_check = MedicationCheck.find_by(drug_id: @drug.id, take_time_id: take_time.id, check_time: @date) %>
