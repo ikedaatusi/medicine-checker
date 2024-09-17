@@ -4,9 +4,8 @@
         <div class=" my-3 card w-100 bg-base-100 shadow-2xl">
          <div class="card-body">
           <%= l(@day) %>
-              <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
-            
-            <ul class="list-inline">
+            <%= image_tag @drug.image_url.url, class: "card-img-top img-fluid", size: '300x200' %>
+              <ul class="list-inline">
                 病院名
                 <li class="list-inline-item"><%= @drug.hospital_name %></li>
                 薬名
@@ -16,7 +15,6 @@
                 <!-- 複数服用タイミングを表示させる　--->
                 服用タイミング
                 <% @drug.take_times.each do |take_time| %>
-          
                 <li><%= take_time.take_time %></li> 
                 <% end %>
                 服用開始日
