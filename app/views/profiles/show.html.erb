@@ -2,7 +2,7 @@
   <div class="flex flex-col md:flex-row space-x-0 md:space-x-8 p-6 bg-white text-gray-800 shadow-md rounded-md">
     <div class="card-body text-center flex flex-col h-full w-full">
       <h2 class="text-2xl font-bold mb-4 text-gray-900">マイページ</h2>
-
+      
         <li class="flex items-center justify-center">
           <i class="fas fa-user mr-2 text-gray-600"></i>
           <strong class="mr-2 text-gray-700"><%= t(User.human_attribute_name(:name)) %></strong>
@@ -19,7 +19,7 @@
           <strong class="mr-2 text-gray-700">登録されている薬の数</strong>
           </li>
           <span class="text-gray-600"><%= @drug_count %></span>
-    
+
       <div class="flex flex-col items-center">
         <%= link_to edit_profile_path(@user), class: 'btn btn-circle btn-outline btn-success hover:bg-green-500 hover:border-green-500 transition transform hover:scale-105' do %>
         <i class="fas fa-edit"></i>
