@@ -69,17 +69,17 @@ class MemosController < ApplicationController
   def destroy
     @memo = Memo.find_by(id: params[:id])
     @date = params[:date]
-  if @memo&.destroy
-    flash.now[:notice] = "削除に成功しました"
-    render turbo_stream: [
-      turbo_stream.remove(@memo),
-      turbo_stream.update("flash", partial: "shared/flash_message")
-    ]
-  else
-    flash.now[:alert] = "削除に失敗しました"
-    @drug = Drug.find(params[:drug_id])
-    render turbo_stream: turbo_stream.replace("memo_#{params[:id]}", partial: "memos/memo_not_found"), status: :see_other
-  end
+    if @memo&.destroy
+      flash.now[:notice] = "削除に成功しました"
+      render turbo_stream: [
+        turbo_stream.remove(@memo),
+        turbo_stream.update("flash", partial: "shared/flash_message")
+      ]
+    else
+      flash.now[:alert] = "削除に失敗しました"
+      @drug = Drug.find(params[:drug_id])
+      render turbo_stream: turbo_stream.replace("memo_#{params[:id]}", partial: "memos/memo_not_found"), status: :see_other
+    end
   end
 
   private
