@@ -13,17 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def guest_login
-  #   @user = User.create(
-  #   name: 'ゲスト',
-  #   email: SecureRandom.alphanumeric(10) + "@email.com",
-  #   password: 'password',
-  #   password_confirmation: 'password'
-  #   )
-  #   auto_login(@user)
-  #   redirect_back_or_to medication_checks_path, success: 'ゲストとしてログインしました'
-  # end
-
   private
 
   def user_params
