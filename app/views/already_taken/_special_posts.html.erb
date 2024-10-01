@@ -1,11 +1,9 @@
 <div id="drug-id-<%= drug.id %>" class="w-full lg:w-1/3 p-2">
   <div class="h-full flex flex-col">
     <div class="card bg-white shadow-lg rounded-lg overflow-hidden flex flex-col h-full transition transform hover:-translate-y-1 hover:shadow-2xl">
-      <!-- 画像 -->
       <figure>
         <%= image_tag drug.image_url_url, size: '300x200', class: "block mx-auto mt-4 rounded-lg shadow-md" %>
       </figure>
-      <!-- カードの内容 -->
       <div class="card-body text-center flex flex-col p-4">
         <ul class="list-none my-3 flex-grow text-left space-y-2">
           <li><strong>病院名:</strong> <span class="text-gray-700"><%= drug.hospital_name %></span></li>
@@ -19,7 +17,6 @@
           <% end %>
           <li><strong>登録日:</strong> <span class="text-gray-700"><%= l drug.created_at, format: :short %></span></li>
         </ul>
-        <!-- 編集・削除ボタン -->
         <div class="card-title flex justify-around mt-4 space-x-2">
           <%= link_to edit_drug_path(drug), class: "btn btn-circle btn-outline btn-success hover:bg-green-500 hover:border-green-500 transition transform hover:scale-105" do %>
             <i class="fas fa-edit"></i>
