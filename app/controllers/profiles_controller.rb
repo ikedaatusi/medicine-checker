@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
     before_action :set_user,only: %i[edit update show]
     before_action :require_login
+    
     def show
         @drug_count = @user.drugs.count # ここでdrugsの数を取得します
     end
