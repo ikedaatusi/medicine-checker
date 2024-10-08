@@ -1,5 +1,6 @@
 class MedicationChecksController < ApplicationController
   before_action :require_login
+  
   def new
     @day = Date.today
     @drug = Drug.find(params[:drug_id])
