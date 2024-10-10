@@ -1,5 +1,6 @@
 class CalendarsController < ApplicationController
     before_action :require_login
+    
     def new
         date_param = params[:date]
     
