@@ -1,4 +1,4 @@
- <%= form_with model: @memo, local: true, url: with_date_create_memo_path(date: @date, drug_id: @drug.id), data: { action: "turbo:submit-end->drug-modal#close" }, method: :post do |form| %>
+<%= form_with model: @memo, local: true, url: with_date_create_memo_path(date: @date, drug_id: @drug.id), data: { action: "turbo:submit-end->drug-modal#close" }, method: :post do |form| %>
   <div class="card-body space-y-6">
     <div class="form-group">
       <%= form.label :body, 'メモ(気付いたことをメモしよう！)', class: "block text-sm font-medium text-gray-700" %>
