@@ -1,4 +1,5 @@
 <h3 class="text-xl font-bold mb-6 text-center">パスワード再設定</h3>
+
 <%= form_with model: @user, url: password_reset_path(@token), class: "w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md" do |f| %>
     <% if f.object.errors.any? %>
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
