@@ -1,4 +1,4 @@
-# サービス名: [medicinechecker（メディカルチェッカー）](https://medicine-checker.com/)
+# サービス名: [medicinechecker（メディシンチェッカー）](https://medicine-checker.com/)
 [![alt text](app/assets/images/mdc.png)](https://medicine-checker.com/)
 
 # ■サービス概要
