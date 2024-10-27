@@ -34,7 +34,6 @@
             <%= form.label :end_time, '(必須)服用終了日', class: "block text-sm font-medium text-gray-700" %>
             <%= form.date_field :end_time, class: 'w-full p-3 bg-gray-50 border border-gray-300 rounded-lg', required: true, value: @next_day %>
           </div>
-          
           <%= form.label 'タイミング (必須)※必ず選択してください' %>
           <%= form.fields_for :take_times do |qu| %>
             <div class="ingredient-fields flex items-center space-y-4">
