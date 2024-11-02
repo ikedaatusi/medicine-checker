@@ -2,7 +2,6 @@
   <%= render 'shared/error_messages', object: @drug %>
     <div class="w-full text-center flex justify-center">
       <div class="mx-auto my-3 card w-85 bg-white shadow-xl rounded-lg p-6">
-     
         <h2 class="text-2xl font-semibold mb-4 text-gray-800">お薬編集</h2>
         <%= form_with(model: @drug, url: with_date_update_calendar_path(@drug, date: @date), method: :patch, local: true) do |form| %>
          
