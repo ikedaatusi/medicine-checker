@@ -4,7 +4,6 @@
       <div class="mx-auto my-3 card w-85 bg-white shadow-xl rounded-lg p-6">
         <h2 class="text-2xl font-semibold mb-4 text-gray-800">お薬編集</h2>
         <%= form_with(model: @drug, url: with_date_update_calendar_path(@drug, date: @date), method: :patch, local: true) do |form| %>
-         
         <div class="card-body space-y-6">
           <div class="form-group">
             <%= form.label :hospital_name, '(必須)病院名 ※10文字以内', class: "block text-sm font-medium text-gray-700" %>
