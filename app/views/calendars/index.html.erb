@@ -19,7 +19,7 @@
           total_checks = MedicationCheck.where(drug: drug, check_time: date).count
           completed_checks = MedicationCheck.where(drug: drug, check_time: date, check: true).count
       
-          drug_status = 'gray' # Default to gray
+          drug_status = 'gray'
           if completed_checks == total_checks && total_checks > 0
             drug_status = 'green'
           elsif completed_checks > 0
