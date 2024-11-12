@@ -3,14 +3,12 @@
     <div class="flex justify-center lg:justify-start">
       <%= image_tag 'mdc.png', size: '500x200', class: 'w-full' %>
     </div>
-    <!-- ヒーローセクション -->
     <div class="hero min-h-fit flex items-center w-full lg:w-1/2">
       <div class="hero-content text-center flex flex-col justify-center h-full">
         <div class="max-w-xl mx-auto lg:mx-0">
           <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold">
             <br>家族飲んでいる薬を登録<br><br>記録して大切な家族を守りましょう
           </h1>
-          <!-- ログインリンク -->
           <div class="flex justify-center mt-10 mb-10">
             <% if logged_in? %>
               <%= link_to new_drug_path, class: "w-70 text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all shadow-md hover:shadow-lg transform hover:scale-105" do %>
