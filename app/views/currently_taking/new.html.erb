@@ -18,7 +18,6 @@
                 <div class="card-body">
                 <h3>※服用したらチェックを入れて保存しましょう</h3>
                   <h3>服用するタイミング</h3>
-                  
                   <% @drug.take_times.each do |take_time| %>
                     <% medication_check = MedicationCheck.find_by(drug_id: @drug.id, take_time_id: take_time.id, check_time: @day) %>
                     <%= form.fields_for "medication_checks_attributes[]", take_time  do |mc_form| %>
