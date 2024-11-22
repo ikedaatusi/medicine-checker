@@ -12,7 +12,6 @@
               <li class="list-inline-item"><%= @drug.drug_name %></li>
               薬の数
               <li class="list-inline-item"><%= @drug.number_of_tablets %></li>
-              <!-- 複数服用タイミングを表示させる　--->
               服用タイミング
               <% @drug.take_times.each do |take_time| %>
               <li><%= take_time.take_time %></li> 
