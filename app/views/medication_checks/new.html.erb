@@ -25,7 +25,6 @@
                         <%= mc_form.check_box :check, {class: "checkbox checkbox-success", checked: medication_check&.check || false }, checked_value = "true", unchecked_value = "false" %>
                         <%= mc_form.hidden_field :take_time_id, value: take_time.id %>
                         <%= mc_form.hidden_field :drug_id, value: @drug.id %>
-                        <!-- 動的に日付をカレンダーから持ってくる -->
                         <%= mc_form.hidden_field :check_time, value: @day %>
                       </li>
                     <% end %>
