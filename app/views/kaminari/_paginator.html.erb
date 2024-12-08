@@ -1,7 +1,6 @@
 <% if @drugs.total_pages > 1 %>
   <nav class="pagination" role="navigation" aria-label="pagination">
     <ul class="pagination-list flex justify-center space-x-1">
-      <%# Previous Page Link %>
       <% if @drugs.prev_page %>
         <li>
           <%= link_to raw("&laquo;"), url_for(page: @drugs.prev_page), class: "btn btn-sm btn-outline" %>
